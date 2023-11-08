@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\WinFormsApp1.vbproj",
-      "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\WinFormsApp1.vbproj",
+      "projectUniqueName": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
+      "projectName": "TourDronePrototype",
+      "projectPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
       "packagesPath": "C:\\Users\\nahid\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\obj\\",
       "projectStyle": "PackageReference",
