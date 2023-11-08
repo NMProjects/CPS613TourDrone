@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class TourDroneControl
     Private Sub CameraUp_Click(sender As Object, e As EventArgs) Handles CameraUp.Click
         Dim droneLoc = DroneImage.Location
         If DroneImage.Location.Y >= 0 Then
