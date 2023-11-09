@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\nahid\\.nuget\\packages\\": {}
+    "C:\\Users\\sania\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
+      "projectUniqueName": "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
       "projectName": "TourDronePrototype",
-      "projectPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
-      "packagesPath": "C:\\Users\\nahid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\obj\\",
+      "projectPath": "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+      "packagesPath": "C:\\Users\\sania\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sania\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -63,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
