@@ -30,9 +30,9 @@ Partial Class Form1
         ' 
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(107, 22)
+        Label1.Location = New Point(73, 99)
         Label1.Name = "Label1"
-        Label1.Size = New Size(607, 166)
+        Label1.Size = New Size(531, 144)
         Label1.TabIndex = 0
         Label1.Text = "Welcome to Grand Teton National Park"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -40,20 +40,22 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(347, 281)
+        Label2.Location = New Point(304, 211)
         Label2.Name = "Label2"
-        Label2.Size = New Size(53, 20)
+        Label2.Size = New Size(41, 15)
         Label2.TabIndex = 1
         Label2.Text = "Label2"
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.NewWelcomeImage
-        ClientSize = New Size(820, 740)
+        BackgroundImageLayout = ImageLayout.Stretch
+        ClientSize = New Size(718, 555)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Form1"
         ResumeLayout(False)
