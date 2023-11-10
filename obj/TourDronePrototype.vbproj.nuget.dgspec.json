@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
+    "C:\\Users\\Borin\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj": {
+    "C:\\Users\\Borin\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "projectUniqueName": "C:\\Users\\Borin\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
         "projectName": "TourDronePrototype",
-        "projectPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\TourDronePrototype.vbproj",
-        "packagesPath": "C:\\Users\\nahid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nahid\\Source\\Repos\\CPS613TourDrone\\obj\\",
+        "projectPath": "C:\\Users\\Borin\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "packagesPath": "C:\\Users\\Borin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Borin\\source\\repos\\NMProjects\\CPS613TourDrone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Borin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -57,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
