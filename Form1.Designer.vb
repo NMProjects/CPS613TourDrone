@@ -24,44 +24,60 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Label1 = New Label()
         Label2 = New Label()
+        Button1 = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(73, 99)
+        Label1.Font = New Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(56, -8)
         Label1.Name = "Label1"
-        Label1.Size = New Size(531, 144)
+        Label1.Size = New Size(590, 144)
         Label1.TabIndex = 0
         Label1.Text = "Welcome to Grand Teton National Park"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label2
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(304, 211)
+        Label2.BackColor = Color.Transparent
+        Label2.FlatStyle = FlatStyle.Flat
+        Label2.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(36, 282)
         Label2.Name = "Label2"
-        Label2.Size = New Size(41, 15)
+        Label2.Size = New Size(646, 77)
         Label2.TabIndex = 1
-        Label2.Text = "Label2"
+        Label2.Text = "Use TourDrones to view the amazing wildlife and scenery at Grand Teton National Park"
+        Label2.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = SystemColors.ActiveCaption
+        Button1.Font = New Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Location = New Point(252, 378)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(199, 52)
+        Button1.TabIndex = 2
+        Button1.Text = "Continue"
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.NewWelcomeImage
+        BackgroundImage = My.Resources.Resources.Jackson_Lake
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(718, 555)
+        Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Welcome"
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
 End Class
