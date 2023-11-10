@@ -57,10 +57,10 @@ Partial Class TourDroneControl
         ' 
         ' DroneImage
         ' 
-        DroneImage.Image = My.Resources.Resources.Grand_Teton
-        DroneImage.Location = New Point(-200, -200)
+        DroneImage.Image = My.Resources.Resources.image_part_002
+        DroneImage.Location = New Point(-100, -200)
         DroneImage.Name = "DroneImage"
-        DroneImage.Size = New Size(1200, 1200)
+        DroneImage.Size = New Size(900, 600)
         DroneImage.SizeMode = PictureBoxSizeMode.StretchImage
         DroneImage.TabIndex = 0
         DroneImage.TabStop = False
@@ -203,7 +203,7 @@ Partial Class TourDroneControl
         Panel4.Size = New Size(179, 65)
         Panel4.TabIndex = 4
         ' 
-        ' Form1
+        ' TourDroneControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
@@ -213,7 +213,7 @@ Partial Class TourDroneControl
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Name = "Form1"
+        Name = "TourDroneControl"
         Text = "Form1"
         Panel1.ResumeLayout(False)
         CType(DroneImage, ComponentModel.ISupportInitialize).EndInit()
