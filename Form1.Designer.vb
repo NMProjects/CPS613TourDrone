@@ -52,7 +52,7 @@ Partial Class Form1
         ' 
         ' Button1
         ' 
-        Button1.BackColor = SystemColors.ActiveCaption
+        Button1.BackColor = Color.White
         Button1.Font = New Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
         Button1.Location = New Point(252, 378)
         Button1.Name = "Button1"
@@ -65,12 +65,14 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = My.Resources.Resources.Jackson_Lake
+        BackColor = SystemColors.Control
+        BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(718, 555)
         Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        DoubleBuffered = True
         Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Welcome"
