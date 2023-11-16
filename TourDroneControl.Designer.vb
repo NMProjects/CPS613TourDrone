@@ -57,10 +57,10 @@ Partial Class TourDroneControl
         ' 
         ' DroneImage
         ' 
-        DroneImage.Image = My.Resources.Resources.Grand_Teton
-        DroneImage.Location = New Point(-200, -200)
+        DroneImage.Image = My.Resources.Resources.image_part_002
+        DroneImage.Location = New Point(-100, -200)
         DroneImage.Name = "DroneImage"
-        DroneImage.Size = New Size(1200, 1200)
+        DroneImage.Size = New Size(900, 600)
         DroneImage.SizeMode = PictureBoxSizeMode.StretchImage
         DroneImage.TabIndex = 0
         DroneImage.TabStop = False
@@ -117,7 +117,7 @@ Partial Class TourDroneControl
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(67, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(234, 46)
@@ -176,7 +176,7 @@ Partial Class TourDroneControl
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(73, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(255, 46)
@@ -203,9 +203,9 @@ Partial Class TourDroneControl
         Panel4.Size = New Size(179, 65)
         Panel4.TabIndex = 4
         ' 
-        ' Form1
+        ' TourDroneControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(820, 740)
@@ -213,7 +213,7 @@ Partial Class TourDroneControl
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Name = "Form1"
+        Name = "TourDroneControl"
         Text = "Form1"
         Panel1.ResumeLayout(False)
         CType(DroneImage, ComponentModel.ISupportInitialize).EndInit()
