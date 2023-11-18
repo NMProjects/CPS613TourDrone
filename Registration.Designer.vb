@@ -50,7 +50,7 @@ Partial Class Registration
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"Mountains", "Forests", "Waterfalls", "Wildlife"})
+        ComboBox1.Items.AddRange(New Object() {"Hidden Falls", "Lake Solitude", "Cascade Canyon", "Mount Owen"})
         ComboBox1.Location = New Point(275, 168)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(168, 33)
@@ -83,9 +83,9 @@ Partial Class Registration
         ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox2.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(275, 313)
+        ComboBox2.Location = New Point(218, 313)
         ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(168, 33)
+        ComboBox2.Size = New Size(283, 33)
         ComboBox2.TabIndex = 5
         ' 
         ' Button1

@@ -63,13 +63,14 @@ Partial Class TourDroneAvailability
         ' 
         ' Button1
         ' 
+        Button1.BackColor = SystemColors.Control
         Button1.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         Button1.Location = New Point(380, 28)
         Button1.Name = "Button1"
         Button1.Size = New Size(319, 45)
         Button1.TabIndex = 18
         Button1.Text = "View Appointment Availability"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' TourDroneAvailability
         ' 

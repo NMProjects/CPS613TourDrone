@@ -1,10 +1,9 @@
 ﻿Imports System.Globalization
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class TourDroneAvailability
     Dim p As Integer
-
-    Dim registrationTimes As DateTime()
-    Public Shared listOfRegistrationAvailabilityTimes As ArrayList
+    Private Shared listOfRegistrationAvailabilityTimes As ArrayList
 
     Property position() As Integer
         Set(ByVal value As Integer)
@@ -35,8 +34,7 @@ Public Class TourDroneAvailability
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         listOfRegistrationAvailabilityTimes = New ArrayList()
 
-
-        Dim firstReservaton As New DateTime
+        Dim firstReservation As New DateTime
         Dim nextReserveTime As New DateTime
         For i = 1 To 12
             If i = 1 Then
@@ -45,19 +43,11 @@ Public Class TourDroneAvailability
                 Dim Minute As Integer = currentTime.Minute
                 Dim Hour As Integer = currentTime.Hour
 
-                If Minute < 55 And Hour > 9 And Hour < 21 Then
-                    Dim NextReserveMinute As Integer = Minute + 5 - Minute Mod 5
-                    firstReservaton = New DateTime(currentTime.Year, currentTime.Month, currentTime.Day, currentTime.Hour, NextReserveMinute, 0)
-                Else
-                    If Hour < 9 Or Hour > 21 Then
-                        firstReservaton = New DateTime(currentTime.Year, currentTime.Month, currentTime.AddDays(1).Day, 9, 0, 0)
-                    ElseIf Minute > 55 Then
-                        firstReservaton = New DateTime(currentTime.Year, currentTime.Month, currentTime.Day, currentTime.Hour, 0, 0)
-                    End If
-
-                End If
-                listOfRegistrationAvailabilityTimes.Add(firstReservaton)
-                nextReserveTime = firstReservaton
+                Dim NextReserveMinute As Integer = 5 - Minute Mod 5
+                firstReservation = currentTime.AddMinutes(NextReserveMinute)
+                firstReservation = New Date(firstReservation.Year, firstReservation.Month, firstReservation.Day, firstReservation.Hour, firstReservation.Minute, 0)
+                listOfRegistrationAvailabilityTimes.Add(firstReservation)
+                nextReserveTime = firstReservation
             Else
                 nextReserveTime = nextReserveTime.AddMinutes(5)
                 listOfRegistrationAvailabilityTimes.Add(nextReserveTime)
@@ -66,6 +56,5 @@ Public Class TourDroneAvailability
 
         Dim AvailabilityDialog As New AvailabilityDialog(p, listOfRegistrationAvailabilityTimes)
         AvailabilityDialog.ShowDialog()
-
     End Sub
 End Class
