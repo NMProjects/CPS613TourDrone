@@ -23,38 +23,31 @@ Partial Class ViewOrRegisterOrQueue
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
-        Button1 = New Button()
         Button2 = New Button()
         Label2 = New Label()
+        PictureBox2 = New PictureBox()
+        Label3 = New Label()
+        Button3 = New Button()
+        Button1 = New Button()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(85, 22)
+        Label1.Location = New Point(74, 74)
         Label1.Name = "Label1"
-        Label1.Size = New Size(557, 96)
+        Label1.Size = New Size(571, 135)
         Label1.TabIndex = 1
-        Label1.Text = "View your exisiting appointment or position in queue, or book an appointment or queue up to use a TourDrone"
+        Label1.Text = "View TourDrone availability, book an appointment/queue up to use a TourDrone, or view your exisiting appointment/position in queue"
         Label1.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.White
-        Button1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(90, 215)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(538, 52)
-        Button1.TabIndex = 2
-        Button1.Text = "View Exisiting Appointment/Position in Queue"
-        Button1.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
         Button2.BackColor = Color.White
         Button2.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button2.Location = New Point(90, 331)
+        Button2.Location = New Point(93, 317)
         Button2.Name = "Button2"
         Button2.Size = New Size(538, 52)
         Button2.TabIndex = 3
@@ -72,23 +65,74 @@ Partial Class ViewOrRegisterOrQueue
         Label2.Text = "Click here to learn more about Grand Teton National Park and what you can do with the TourDrones"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImage = My.Resources.Resources.house_icon_1
+        PictureBox2.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox2.Location = New Point(8, 8)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(30, 30)
+        PictureBox2.TabIndex = 11
+        PictureBox2.TabStop = False
+        ' 
+        ' Label3
+        ' 
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Location = New Point(74, 19)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(557, 46)
+        Label3.TabIndex = 25
+        Label3.Text = "Main Menu"
+        Label3.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = Color.White
+        Button3.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Button3.Location = New Point(93, 406)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(538, 52)
+        Button3.TabIndex = 2
+        Button3.Text = "View Exisiting Appointment/Position in Queue"
+        Button3.UseVisualStyleBackColor = False
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.White
+        Button1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Button1.Location = New Point(93, 228)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(538, 52)
+        Button1.TabIndex = 5
+        Button1.Text = "View TourDrone Availability"
+        Button1.UseVisualStyleBackColor = False
+        ' 
         ' ViewOrRegisterOrQueue
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         ClientSize = New Size(718, 555)
+        Controls.Add(Label3)
+        Controls.Add(PictureBox2)
+        Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Button2)
-        Controls.Add(Button1)
+        Controls.Add(Button3)
         Controls.Add(Label1)
         Name = "ViewOrRegisterOrQueue"
         Text = "ViewOrRegisterOrQueue"
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button1 As Button
 End Class

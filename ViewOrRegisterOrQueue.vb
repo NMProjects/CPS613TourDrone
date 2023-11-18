@@ -4,9 +4,22 @@
         Me.CenterToScreen()
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim homeDialog As New GoHomeDialog
+        If homeDialog.ShowDialog() = DialogResult.OK Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        Dim ViewAvailability As New ViewAvailability
+        ViewAvailability.Show()
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim RegisterOrQueue As New ChooseRegisterOrQueue
-        RegisterOrQueue.Show()
-        Me.Hide()
+        Me.Close()
+        Dim ChooseRegisterOrQueue As New ChooseRegisterOrQueue
+        ChooseRegisterOrQueue.Show()
     End Sub
 End Class

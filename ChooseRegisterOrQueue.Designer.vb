@@ -26,6 +26,10 @@ Partial Class ChooseRegisterOrQueue
         Button1 = New Button()
         Button2 = New Button()
         Label2 = New Label()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -72,6 +76,28 @@ Partial Class ChooseRegisterOrQueue
         Label2.Text = "Click here to learn more about Grand Teton National Park and what you can do with the TourDrones"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.BackgroundImage = My.Resources.Resources.back
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(8, 518)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(30, 30)
+        PictureBox1.TabIndex = 8
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImage = My.Resources.Resources.house_icon_1
+        PictureBox2.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox2.Location = New Point(8, 8)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(30, 30)
+        PictureBox2.TabIndex = 10
+        PictureBox2.TabStop = False
+        ' 
         ' ChooseRegisterOrQueue
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -79,6 +105,8 @@ Partial Class ChooseRegisterOrQueue
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(718, 555)
+        Controls.Add(PictureBox2)
+        Controls.Add(PictureBox1)
         Controls.Add(Label2)
         Controls.Add(Button2)
         Controls.Add(Button1)
@@ -86,7 +114,9 @@ Partial Class ChooseRegisterOrQueue
         DoubleBuffered = True
         ForeColor = Color.Black
         Name = "ChooseRegisterOrQueue"
-        Text = "Register or Queue for a TourDrone"
+        Text = "Book an Appointment or Queue for a TourDrone"
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -94,4 +124,6 @@ Partial Class ChooseRegisterOrQueue
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
