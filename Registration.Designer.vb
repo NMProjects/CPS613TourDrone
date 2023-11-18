@@ -30,6 +30,7 @@ Partial Class Registration
         Button1 = New Button()
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
+        Label4 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -92,11 +93,11 @@ Partial Class Registration
         ' 
         Button1.BackColor = Color.White
         Button1.Font = New Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(260, 432)
+        Button1.Location = New Point(298, 457)
         Button1.Name = "Button1"
-        Button1.Size = New Size(199, 52)
+        Button1.Size = New Size(122, 52)
         Button1.TabIndex = 6
-        Button1.Text = "Continue"
+        Button1.Text = "Next"
         Button1.UseVisualStyleBackColor = False
         ' 
         ' PictureBox1
@@ -121,12 +122,23 @@ Partial Class Registration
         PictureBox2.TabIndex = 11
         PictureBox2.TabStop = False
         ' 
+        ' Label4
+        ' 
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(81, 380)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(557, 46)
+        Label4.TabIndex = 12
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Registration
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         ClientSize = New Size(718, 555)
+        Controls.Add(Label4)
         Controls.Add(PictureBox2)
         Controls.Add(PictureBox1)
         Controls.Add(Button1)
@@ -150,4 +162,5 @@ Partial Class Registration
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label4 As Label
 End Class

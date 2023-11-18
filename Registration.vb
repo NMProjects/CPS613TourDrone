@@ -3,6 +3,10 @@
 Public Class Registration
     Public Shared listOfRegistrationAvailabilityTimes As ArrayList
 
+    Private Shared TourDroneName As String
+    Private Shared POI As String
+    Private Shared AppointmentTime As String
+
     Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         ComboBox2.Enabled = False
@@ -13,9 +17,24 @@ Public Class Registration
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Button1.Enabled = False
         Label3.Show()
         ComboBox2.Enabled = True
         ComboBox2.Show()
+
+        If ComboBox1.SelectedIndex = 0 Then
+            TourDroneName = "TourDrone A"
+        ElseIf ComboBox1.SelectedIndex = 1 Then
+            TourDroneName = "TourDrone B"
+        ElseIf ComboBox1.SelectedIndex = 2 Then
+            TourDroneName = "TourDrone C"
+        ElseIf ComboBox1.SelectedIndex = 3 Then
+            TourDroneName = "TourDrone D"
+        End If
+
+        ComboBox2.SelectedIndex = -1
+        Label4.Text = "You will be Piloting " + TourDroneName
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -32,7 +51,7 @@ Public Class Registration
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-
+        Button1.Enabled = True
     End Sub
 
     Private Sub listAvailability()
@@ -68,4 +87,12 @@ Public Class Registration
                 dateAndTime.ToString("tt", CultureInfo.InvariantCulture)
         Return stringDateAndTime
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        POI = ComboBox1.SelectedItem.ToString
+        AppointmentTime = ComboBox2.SelectedItem.ToString
+        Dim contactInfo As New ContactInfoRegistration(TourDroneName, POI, AppointmentTime)
+        contactInfo.Show()
+    End Sub
 End Class

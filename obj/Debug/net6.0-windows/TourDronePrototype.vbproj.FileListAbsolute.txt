@@ -25,3 +25,5 @@ C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewAvailability.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.TourDroneAvailability.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.AvailabilityDialog.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ContactInfoRegistration.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.BookingComplete.resources

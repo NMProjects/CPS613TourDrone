@@ -1,4 +1,9 @@
 ﻿Public Class ViewAvailability
+
+    Private Sub ViewAvailability_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
+    End Sub
+
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
         Dim ViewOrRegisterOrQueue As New ViewOrRegisterOrQueue
@@ -17,4 +22,5 @@
         Dim ViewOrRegisterOrQueue As New ViewOrRegisterOrQueue
         ViewOrRegisterOrQueue.Show()
     End Sub
+
 End Class
