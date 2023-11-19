@@ -29,10 +29,8 @@ Partial Class BookingComplete
         Label5 = New Label()
         Label6 = New Label()
         Button1 = New Button()
-        PictureBox2 = New PictureBox()
         Label7 = New Label()
         Label8 = New Label()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -109,17 +107,6 @@ Partial Class BookingComplete
         Button1.Text = "Home"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.BackgroundImage = My.Resources.Resources.house_icon_1
-        PictureBox2.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox2.Location = New Point(8, 8)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(30, 30)
-        PictureBox2.TabIndex = 27
-        PictureBox2.TabStop = False
-        ' 
         ' Label7
         ' 
         Label7.BackColor = Color.Transparent
@@ -148,7 +135,6 @@ Partial Class BookingComplete
         ClientSize = New Size(718, 555)
         Controls.Add(Label8)
         Controls.Add(Label7)
-        Controls.Add(PictureBox2)
         Controls.Add(Button1)
         Controls.Add(Label6)
         Controls.Add(Label5)
@@ -158,7 +144,6 @@ Partial Class BookingComplete
         Controls.Add(Label1)
         Name = "BookingComplete"
         Text = "Booking Complete"
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -169,7 +154,6 @@ Partial Class BookingComplete
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
 End Class

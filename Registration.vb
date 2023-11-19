@@ -1,11 +1,16 @@
 ﻿Imports System.Globalization
 
 Public Class Registration
-    Public Shared listOfRegistrationAvailabilityTimes As ArrayList
+    'Public Shared listOfRegistrationAvailabilityTimes As ArrayList
 
     Private Shared TourDroneName As String
     Private Shared POI As String
     Private Shared AppointmentTime As String
+
+    Private Shared listOfTourDroneNames As String()
+    Private Shared listOfPOIs As String()
+    Private Shared minutesForEachTourDrone As Integer()
+    Private Shared foundReservation As Boolean()
 
     Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
@@ -13,7 +18,7 @@ Public Class Registration
         Label3.Hide()
         ComboBox2.Hide()
         Button1.Enabled = False
-        listAvailability()
+        listOfTourDroneNames = New String() {"TourDrone A", "TourDrone B", "TourDrone C", "TourDrone D"}
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -33,7 +38,10 @@ Public Class Registration
         End If
 
         ComboBox2.SelectedIndex = -1
+        ComboBox2.Items.Clear()
         Label4.Text = "You will be Piloting " + TourDroneName
+
+        listAvailability()
 
     End Sub
 
@@ -55,28 +63,60 @@ Public Class Registration
     End Sub
 
     Private Sub listAvailability()
-        listOfRegistrationAvailabilityTimes = New ArrayList()
-
         Dim firstReservation As New DateTime
         Dim nextReserveTime As New DateTime
+
+        Dim additionalTime As Integer = 0
+
         For i = 1 To 12
+            Dim foundReservation = False
             If i = 1 Then
                 Dim currentTime As DateTime = DateTime.Now
-
                 Dim Minute As Integer = currentTime.Minute
-                Dim Hour As Integer = currentTime.Hour
 
-                Dim NextReserveMinute As Integer = 5 - Minute Mod 5
+                Dim NextReserveMinute As Integer = 5 - Minute Mod 5 + additionalTime
                 firstReservation = currentTime.AddMinutes(NextReserveMinute)
                 firstReservation = New Date(firstReservation.Year, firstReservation.Month, firstReservation.Day, firstReservation.Hour, firstReservation.Minute, 0)
 
-                listOfRegistrationAvailabilityTimes.Add(firstReservation)
-                ComboBox2.Items.Add(convertDateTimetoString(firstReservation))
-                nextReserveTime = firstReservation
+                For j = 0 To 3
+                    If TourDroneName = listOfTourDroneNames(j) Then
+                        For k = 0 To Form1.listOfAllListsRegistration(j).Count - 1
+                            If Form1.listOfAllListsRegistration(j).Count <> 0 Then
+                                If Form1.listOfAllListsRegistration(j)(k)(4).ToString = (convertDateTimetoString(firstReservation)) Then
+                                    i = i - 1
+                                    additionalTime = additionalTime + 5
+                                    foundReservation = True
+                                    Exit For
+                                End If
+                            End If
+                        Next
+                        If foundReservation = False Then
+                            ComboBox2.Items.Add(convertDateTimetoString(firstReservation))
+                            nextReserveTime = firstReservation.AddMinutes(5)
+                        End If
+                        Exit For
+                    End If
+                Next
             Else
-                nextReserveTime = nextReserveTime.AddMinutes(5)
-                listOfRegistrationAvailabilityTimes.Add(nextReserveTime)
-                ComboBox2.Items.Add(convertDateTimetoString(nextReserveTime))
+                For j = 0 To 3
+                    If TourDroneName = listOfTourDroneNames(j) Then
+                        For k = 0 To Form1.listOfAllListsRegistration(j).Count - 1
+                            If Form1.listOfAllListsRegistration(j).Count <> 0 Then
+                                If Form1.listOfAllListsRegistration(j)(k)(4).ToString = convertDateTimetoString(nextReserveTime) Then
+                                    i = i - 1
+                                    nextReserveTime = nextReserveTime.AddMinutes(5)
+                                    foundReservation = True
+                                    Exit For
+                                End If
+                            End If
+                        Next
+                        If foundReservation = False Then
+                            ComboBox2.Items.Add(convertDateTimetoString(nextReserveTime))
+                            nextReserveTime = nextReserveTime.AddMinutes(5)
+                        End If
+                        Exit For
+                    End If
+                Next
             End If
         Next
     End Sub
