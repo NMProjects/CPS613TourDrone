@@ -7,7 +7,6 @@
     Dim downImg = My.Resources._47
     Dim imgX = 0
     Dim imgY = 0
-    Dim test = 0
 
     Private Sub CameraUp_Click(sender As Object, e As EventArgs) Handles CameraUp.Click
         Dim droneLoc = DroneImage.Location

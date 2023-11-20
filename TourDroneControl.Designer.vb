@@ -38,6 +38,8 @@ Partial Class TourDroneControl
         Label2 = New Label()
         PictureBox1 = New PictureBox()
         Panel4 = New Panel()
+        CameraIn = New Button()
+        CameraOut = New Button()
         Panel1.SuspendLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -117,7 +119,7 @@ Partial Class TourDroneControl
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(67, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(234, 46)
@@ -127,6 +129,8 @@ Partial Class TourDroneControl
         ' Panel3
         ' 
         Panel3.BackColor = SystemColors.ControlLightLight
+        Panel3.Controls.Add(CameraOut)
+        Panel3.Controls.Add(CameraIn)
         Panel3.Controls.Add(CameraDown)
         Panel3.Controls.Add(CameraLeft)
         Panel3.Controls.Add(CameraRight)
@@ -176,7 +180,7 @@ Partial Class TourDroneControl
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(73, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(255, 46)
@@ -203,9 +207,27 @@ Partial Class TourDroneControl
         Panel4.Size = New Size(179, 65)
         Panel4.TabIndex = 4
         ' 
+        ' CameraIn
+        ' 
+        CameraIn.Location = New Point(20, 63)
+        CameraIn.Name = "CameraIn"
+        CameraIn.Size = New Size(54, 73)
+        CameraIn.TabIndex = 6
+        CameraIn.Text = "Button1"
+        CameraIn.UseVisualStyleBackColor = True
+        ' 
+        ' CameraOut
+        ' 
+        CameraOut.Location = New Point(20, 147)
+        CameraOut.Name = "CameraOut"
+        CameraOut.Size = New Size(54, 73)
+        CameraOut.TabIndex = 7
+        CameraOut.Text = "Button1"
+        CameraOut.UseVisualStyleBackColor = True
+        ' 
         ' TourDroneControl
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(820, 740)
@@ -242,4 +264,6 @@ Partial Class TourDroneControl
     Friend WithEvents CameraLeft As Button
     Friend WithEvents CameraRight As Button
     Friend WithEvents CameraUp As Button
+    Friend WithEvents CameraOut As Button
+    Friend WithEvents CameraIn As Button
 End Class
