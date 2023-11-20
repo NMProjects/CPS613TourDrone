@@ -10,6 +10,9 @@
     <Compile Update="ChooseRegisterOrQueue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ContactInfoQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ContactInfoRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +23,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ObserveTourDrone.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Queue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QueueSignUpComplete.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Registration.vb">
@@ -37,7 +46,16 @@
     <Compile Update="ViewAvailability.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewExisitingRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewExistingQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewOrRegisterOrQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewRegistrationAndQueue.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

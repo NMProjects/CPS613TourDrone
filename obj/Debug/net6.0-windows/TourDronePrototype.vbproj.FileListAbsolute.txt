@@ -27,3 +27,9 @@ C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.AvailabilityDialog.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ContactInfoRegistration.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.BookingComplete.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.Queue.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ContactInfoQueue.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.QueueSignUpComplete.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewRegistrationAndQueue.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewExisitingRegistration.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewExistingQueue.resources

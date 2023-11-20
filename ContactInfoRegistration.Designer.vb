@@ -24,13 +24,13 @@ Partial Class ContactInfoRegistration
     Private Sub InitializeComponent()
         PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
-        Label2 = New Label()
         Label1 = New Label()
         Label3 = New Label()
         TextBox1 = New TextBox()
         Label4 = New Label()
         TextBox2 = New TextBox()
         Button1 = New Button()
+        Label2 = New Label()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -57,17 +57,6 @@ Partial Class ContactInfoRegistration
         PictureBox1.TabIndex = 13
         PictureBox1.TabStop = False
         ' 
-        ' Label2
-        ' 
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(53, 19)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(612, 46)
-        Label2.TabIndex = 14
-        Label2.Text = "Book an Appointment for a TourDrone"
-        Label2.TextAlign = ContentAlignment.MiddleCenter
-        ' 
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
@@ -76,7 +65,7 @@ Partial Class ContactInfoRegistration
         Label1.Name = "Label1"
         Label1.Size = New Size(557, 96)
         Label1.TabIndex = 15
-        Label1.Text = "Enter your contact info to be notified 2 minutes before your appointment time"
+        Label1.Text = "Enter your contact info to be notified a few minutes before your appointment time"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label3
@@ -102,7 +91,7 @@ Partial Class ContactInfoRegistration
         ' 
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(157, 314)
+        Label4.Location = New Point(155, 314)
         Label4.Name = "Label4"
         Label4.Size = New Size(408, 44)
         Label4.TabIndex = 18
@@ -127,6 +116,17 @@ Partial Class ContactInfoRegistration
         Button1.TabIndex = 20
         Button1.Text = "Complete Booking"
         Button1.UseVisualStyleBackColor = False
+        ' 
+        ' Label2
+        ' 
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Location = New Point(53, 19)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(612, 46)
+        Label2.TabIndex = 14
+        Label2.Text = "Book an Appointment for a TourDrone"
+        Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' ContactInfoRegistration
         ' 
@@ -153,11 +153,11 @@ Partial Class ContactInfoRegistration
 
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label2 As Label
 End Class

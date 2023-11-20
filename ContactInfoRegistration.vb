@@ -3,8 +3,9 @@
     Dim nameOfTourDrone As String
     Dim visits As String
     Dim time As String
+    Dim AppointmentTimeAsDate As DateTime
 
-    Public Sub New(TourDroneName As String, POI As String, registrationTime As String)
+    Public Sub New(TourDroneName As String, POI As String, registrationTime As String, timeAsDate As DateTime)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -13,6 +14,7 @@
         nameOfTourDrone = TourDroneName
         visits = POI
         time = registrationTime
+        AppointmentTimeAsDate = timeAsDate
     End Sub
 
     Private Sub ContactInfoRegistration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -54,7 +56,7 @@
         Dim phone As String = TextBox2.Text
 
         Me.Close()
-        Dim bookingComplete As New BookingComplete(email, phone, nameOfTourDrone, visits, time)
+        Dim bookingComplete As New BookingComplete(email, phone, nameOfTourDrone, visits, time, AppointmentTimeAsDate)
         bookingComplete.Show()
     End Sub
 End Class

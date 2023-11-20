@@ -9,6 +9,12 @@
         Me.Close()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim queue As New Queue
+        queue.Show()
+        Me.Close()
+    End Sub
+
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
         Dim ViewOrRegisterOrQueue As New ViewOrRegisterOrQueue
