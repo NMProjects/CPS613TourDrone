@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 
 Public Class DroneToPOI
+    Dim Drone As String
     Dim array() As String = {"grandteton1.png", "grandteton2.png", "grandteton3.png", "grandteton4.png",
         "grandteton5.png", "grandteton6.png", "grandteton7.png", "grandteton8.png", "grandteton9.png",
         "grandteton10.png", "grandteton11.png", "grandteton12.png", "grandteton13.png", "grandteton14.png",
@@ -11,6 +12,15 @@ Public Class DroneToPOI
     Dim parentPath As String = IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Directory.GetCurrentDirectory)))
 
     Dim resourcesDirectory As String = Path.Combine(parentPath, "Resources")
+
+    Public Sub New(ByVal TourDrone As String)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        Drone = TourDrone
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         timeCounter = timeCounter + 1
         If (timeCounter = 5) Then
