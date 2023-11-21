@@ -31,6 +31,8 @@ Partial Class TourDroneControl
         DroneUp = New Button()
         Label1 = New Label()
         Panel3 = New Panel()
+        CameraOut = New Button()
+        CameraIn = New Button()
         CameraDown = New Button()
         CameraLeft = New Button()
         CameraRight = New Button()
@@ -38,14 +40,16 @@ Partial Class TourDroneControl
         Label2 = New Label()
         PictureBox1 = New PictureBox()
         Panel4 = New Panel()
-        CameraIn = New Button()
-        CameraOut = New Button()
+        StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripStatusLabel2 = New ToolStripStatusLabel()
         Panel1.SuspendLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -60,7 +64,7 @@ Partial Class TourDroneControl
         ' DroneImage
         ' 
         DroneImage.Image = My.Resources.Resources.image_part_002
-        DroneImage.Location = New Point(-100, -200)
+        DroneImage.Location = New Point(0, 0)
         DroneImage.Name = "DroneImage"
         DroneImage.Size = New Size(900, 600)
         DroneImage.SizeMode = PictureBoxSizeMode.StretchImage
@@ -141,6 +145,24 @@ Partial Class TourDroneControl
         Panel3.Size = New Size(389, 241)
         Panel3.TabIndex = 2
         ' 
+        ' CameraOut
+        ' 
+        CameraOut.Location = New Point(20, 147)
+        CameraOut.Name = "CameraOut"
+        CameraOut.Size = New Size(54, 73)
+        CameraOut.TabIndex = 7
+        CameraOut.Text = "Button1"
+        CameraOut.UseVisualStyleBackColor = True
+        ' 
+        ' CameraIn
+        ' 
+        CameraIn.Location = New Point(20, 63)
+        CameraIn.Name = "CameraIn"
+        CameraIn.Size = New Size(54, 73)
+        CameraIn.TabIndex = 6
+        CameraIn.Text = "Button1"
+        CameraIn.UseVisualStyleBackColor = True
+        ' 
         ' CameraDown
         ' 
         CameraDown.Location = New Point(125, 184)
@@ -207,23 +229,27 @@ Partial Class TourDroneControl
         Panel4.Size = New Size(179, 65)
         Panel4.TabIndex = 4
         ' 
-        ' CameraIn
+        ' StatusStrip1
         ' 
-        CameraIn.Location = New Point(20, 63)
-        CameraIn.Name = "CameraIn"
-        CameraIn.Size = New Size(54, 73)
-        CameraIn.TabIndex = 6
-        CameraIn.Text = "Button1"
-        CameraIn.UseVisualStyleBackColor = True
+        StatusStrip1.ImageScalingSize = New Size(20, 20)
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
+        StatusStrip1.Location = New Point(0, 714)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(820, 26)
+        StatusStrip1.TabIndex = 6
+        StatusStrip1.Text = "StatusStrip1"
         ' 
-        ' CameraOut
+        ' ToolStripStatusLabel1
         ' 
-        CameraOut.Location = New Point(20, 147)
-        CameraOut.Name = "CameraOut"
-        CameraOut.Size = New Size(54, 73)
-        CameraOut.TabIndex = 7
-        CameraOut.Text = "Button1"
-        CameraOut.UseVisualStyleBackColor = True
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(153, 20)
+        ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
+        ' 
+        ' ToolStripStatusLabel2
+        ' 
+        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        ToolStripStatusLabel2.Size = New Size(153, 20)
+        ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
         ' 
         ' TourDroneControl
         ' 
@@ -231,6 +257,7 @@ Partial Class TourDroneControl
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(820, 740)
+        Controls.Add(StatusStrip1)
         Controls.Add(Panel4)
         Controls.Add(Panel3)
         Controls.Add(Panel2)
@@ -245,7 +272,10 @@ Partial Class TourDroneControl
         Panel3.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
@@ -266,4 +296,7 @@ Partial Class TourDroneControl
     Friend WithEvents CameraUp As Button
     Friend WithEvents CameraOut As Button
     Friend WithEvents CameraIn As Button
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
 End Class

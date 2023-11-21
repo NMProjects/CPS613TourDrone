@@ -12,4 +12,10 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim drone As New TourDroneControl
+        drone.Show()
+        Me.Hide()
+    End Sub
 End Class

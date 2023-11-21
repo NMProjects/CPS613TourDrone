@@ -25,15 +25,16 @@ Partial Class Form1
         Label1 = New Label()
         Label2 = New Label()
         Button1 = New Button()
+        Button2 = New Button()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point)
-        Label1.Location = New Point(56, -8)
+        Label1.Location = New Point(64, -11)
         Label1.Name = "Label1"
-        Label1.Size = New Size(590, 144)
+        Label1.Size = New Size(674, 192)
         Label1.TabIndex = 0
         Label1.Text = "Welcome to Grand Teton National Park"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -43,9 +44,9 @@ Partial Class Form1
         Label2.BackColor = Color.Transparent
         Label2.FlatStyle = FlatStyle.Flat
         Label2.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(36, 282)
+        Label2.Location = New Point(41, 376)
         Label2.Name = "Label2"
-        Label2.Size = New Size(646, 77)
+        Label2.Size = New Size(738, 103)
         Label2.TabIndex = 1
         Label2.Text = "Use TourDrones to view the amazing wildlife and scenery at Grand Teton National Park"
         Label2.TextAlign = ContentAlignment.MiddleCenter
@@ -54,26 +55,36 @@ Partial Class Form1
         ' 
         Button1.BackColor = Color.White
         Button1.Font = New Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(252, 378)
+        Button1.Location = New Point(288, 504)
+        Button1.Margin = New Padding(3, 4, 3, 4)
         Button1.Name = "Button1"
-        Button1.Size = New Size(199, 52)
+        Button1.Size = New Size(227, 69)
         Button1.TabIndex = 2
         Button1.Text = "Continue"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(263, 615)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(187, 101)
+        Button2.TabIndex = 3
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(718, 555)
+        ClientSize = New Size(821, 740)
+        Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         DoubleBuffered = True
-        Margin = New Padding(3, 2, 3, 2)
         Name = "Form1"
         Text = "Welcome"
         ResumeLayout(False)
@@ -82,4 +93,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
