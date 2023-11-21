@@ -24,7 +24,7 @@ Public Class TourDroneControl
 
     Private Sub TourDroneControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddHandler CountdownTimer.Tick, AddressOf timerTick
-        maxTime = maxTime.addSeconds(10)
+        maxTime = maxTime.addSeconds(150)
         CountdownTimer.Start()
 
     End Sub
@@ -266,7 +266,7 @@ Public Class TourDroneControl
         picTimer = 50
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Panel1.Enabled = False
         Panel2.Enabled = False
         Panel3.Enabled = False
