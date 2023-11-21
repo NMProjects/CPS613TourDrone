@@ -1,4 +1,6 @@
-﻿Public Class BookingComplete
+﻿Imports System.Reflection.Emit
+
+Public Class BookingComplete
 
     Private Shared RegistrationTourDrone As ArrayList
 
@@ -8,7 +10,10 @@
     Dim userEmail As String
     Dim userPhone As String
     Dim AppointmentTimeAsDate As DateTime
-    Dim timer As Timer
+    Private WithEvents timer As System.Windows.Forms.Timer
+
+    Dim isClosedProgrammatically As Boolean
+    Dim checkClosing = False
 
     Public Sub New(Email As String, Phone As String, TourDroneName As String, POI As String, registrationTime As String, timeAsDate As DateTime)
 
@@ -26,13 +31,16 @@
 
     Private Sub BookingComplete_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
-        timer = New Timer()
-        Dim timeDifference = DateDiff("s", DateTime.Now, AppointmentTimeAsDate) * 1000
-        timer.Interval = 1000
-        timer.Enabled = True
-        AddHandler timer.Tick, AddressOf ViewExisitingRegistration.Timer_Tick
+        timer = New System.Windows.Forms.Timer With {
+            .Interval = 1000,
+            .Enabled = True
+        }
 
-        Form1.listOfTimersRegistration.Add(timer)
+        AddHandler timer.Tick, Sub(s As Object, n As EventArgs)
+                                   Form1.Timer_Tick(s, n, userEmail, AppointmentTimeAsDate, timer)
+                               End Sub
+
+
 
         RegistrationTourDrone = New ArrayList From {
             userEmail,
@@ -41,7 +49,8 @@
             visits,
             time,
             AppointmentTimeAsDate,
-            timer
+            timer,
+            Form1.timeDifference
         }
 
         If nameOfTourDrone = "TourDrone A" Then
@@ -60,11 +69,19 @@
         Label7.Text = "Visits: " + visits
         Label8.Text = "Appointment Time: " + time
 
+        isClosedProgrammatically = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        isClosedProgrammatically = True
         Me.Close()
         Form1.Show()
+    End Sub
+
+    Private Sub BookingComplete_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
+            Application.Exit()
+        End If
     End Sub
 
 

@@ -5,6 +5,7 @@ Public Class AvailabilityDialog
 
     Dim number As New Integer
     Dim timings As New ArrayList
+
     Public Sub New(DroneNum As Integer, AvailabilityTimes As ArrayList)
 
         ' This call is required by the designer.
@@ -21,13 +22,13 @@ Public Class AvailabilityDialog
     End Sub
 
     Private Sub AvailabilityDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If number = 1 Then
+        If number = 0 Then
             Label1.Text = "Availability for TourDrone A"
-        ElseIf number = 2 Then
+        ElseIf number = 1 Then
             Label1.Text = "Availability for TourDrone B"
-        ElseIf number = 3 Then
+        ElseIf number = 2 Then
             Label1.Text = "Availability for TourDrone C"
-        ElseIf number = 4 Then
+        ElseIf number = 3 Then
             Label1.Text = "Availability for TourDrone D"
         End If
 
@@ -73,4 +74,5 @@ Public Class AvailabilityDialog
         AddHandler OK_Button.Click, AddressOf OK_Button_Click
 
     End Sub
+
 End Class

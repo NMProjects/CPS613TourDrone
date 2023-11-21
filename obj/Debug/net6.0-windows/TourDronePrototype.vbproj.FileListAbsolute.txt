@@ -33,3 +33,7 @@ C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewRegistrationAndQueue.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewExisitingRegistration.resources
 C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ViewExistingQueue.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.RegistrationCancelled.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.LeftQueue.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.ChooseObserveArea.resources
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.TakeControlDialog.resources

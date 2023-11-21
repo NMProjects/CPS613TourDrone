@@ -72,7 +72,7 @@ Partial Class GoHomeDialog
         Label1.Name = "Label1"
         Label1.Size = New Size(360, 47)
         Label1.TabIndex = 1
-        Label1.Text = "Are you sure you would like to exit and go back to the welcome screen?"
+        Label1.Text = "Are you sure you would like to go back to the welcome screen?"
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' GoHomeDialog

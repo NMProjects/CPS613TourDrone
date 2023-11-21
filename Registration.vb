@@ -13,8 +13,10 @@ Public Class Registration
     Private Shared foundReservation As Boolean()
 
     Private Shared listOfTimes As ArrayList
+    Dim isClosedProgrammatically As Boolean
 
     Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        isClosedProgrammatically = False
         Me.CenterToScreen()
         ComboBox2.Enabled = False
         Label3.Hide()
@@ -49,6 +51,7 @@ Public Class Registration
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        isClosedProgrammatically = True
         Me.Close()
         Dim ChooseRegisterOrQueue As New ChooseRegisterOrQueue
         ChooseRegisterOrQueue.Show()
@@ -57,6 +60,7 @@ Public Class Registration
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Dim homeDialog As New GoHomeDialog
         If homeDialog.ShowDialog() = DialogResult.OK Then
+            isClosedProgrammatically = True
             Me.Close()
         End If
     End Sub
@@ -154,6 +158,7 @@ Public Class Registration
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        isClosedProgrammatically = True
         Me.Close()
         POI = ComboBox1.SelectedItem.ToString
         AppointmentTime = ComboBox2.SelectedItem.ToString
@@ -167,5 +172,11 @@ Public Class Registration
         'ComboBox2.SelectedIndex = -1
         'ComboBox2.Items.Clear()
 
+    End Sub
+
+    Private Sub Registration_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
+            Application.Exit()
+        End If
     End Sub
 End Class

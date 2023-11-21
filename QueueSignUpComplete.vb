@@ -6,14 +6,17 @@ Public Class QueueSignUpComplete
 
     Private Shared QueueTourDrone As ArrayList
     Private Shared listOfAvailableTimes As ArrayList
+    Dim isClosedProgrammatically As Boolean
 
     Dim nameOfTourDrone As String
     Dim visits As String
     Dim userEmail As String
     Dim userPhone As String
     Dim time As String
+    Dim timeAsDate As String
 
     Private Shared listOfTourDroneNames As String()
+    Private WithEvents timer As System.Windows.Forms.Timer
 
     Public Sub New(Email As String, Phone As String, TourDroneName As String, POI As String)
 
@@ -29,19 +32,33 @@ Public Class QueueSignUpComplete
 
     Private Sub QueueSignUpComplete_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        isClosedProgrammatically = False
         listOfTourDroneNames = New String() {"TourDrone A", "TourDrone B", "TourDrone C", "TourDrone D"}
         listOfAvailableTimes = New ArrayList()
 
         Dim position As Integer
 
-        time = listAvailability()
+        time = convertDateTimetoString(listAvailability())
+        timeAsDate = listAvailability()
+
+        timer = New System.Windows.Forms.Timer With {
+           .Interval = 1000,
+           .Enabled = True
+        }
+
+        AddHandler timer.Tick, Sub(s As Object, n As EventArgs)
+                                   Form1.Timer_Tick2(s, n, userEmail, timeAsDate, timer)
+                               End Sub
 
         QueueTourDrone = New ArrayList From {
             userEmail,
             userPhone,
             nameOfTourDrone,
             visits,
-            time
+            time,
+            timeAsDate,
+            timer,
+            Form1.timeDifference2
         }
 
         If nameOfTourDrone = "TourDrone A" Then
@@ -66,6 +83,7 @@ Public Class QueueSignUpComplete
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        isClosedProgrammatically = True
         Me.Close()
         Form1.Show()
     End Sub
@@ -114,7 +132,7 @@ Public Class QueueSignUpComplete
                 End If
             Next
         Next
-        Return convertDateTimetoString(firstReservation)
+        Return firstReservation
     End Function
 
     Private Function convertDateTimetoString(dateAndTime As DateTime)
@@ -123,4 +141,18 @@ Public Class QueueSignUpComplete
                 dateAndTime.ToString("tt", CultureInfo.InvariantCulture)
         Return stringDateAndTime
     End Function
+
+    Private Sub QueueSignUpComplete_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        isClosedProgrammatically = True
+        Me.Close()
+
+        Dim chooseObserveArea As New ChooseObserveArea(userEmail, userPhone, nameOfTourDrone, visits, time, timeAsDate)
+        chooseObserveArea.Show()
+    End Sub
 End Class

@@ -56,7 +56,6 @@ Partial Class ViewExisitingRegistration
         Label8.Name = "Label8"
         Label8.Size = New Size(557, 33)
         Label8.TabIndex = 35
-        Label8.Text = "ewrewre"
         Label8.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label7
@@ -162,7 +161,6 @@ Partial Class ViewExisitingRegistration
         Label9.Name = "Label9"
         Label9.Size = New Size(557, 33)
         Label9.TabIndex = 40
-        Label9.Text = "ewrewre"
         Label9.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' ViewExisitingRegistration

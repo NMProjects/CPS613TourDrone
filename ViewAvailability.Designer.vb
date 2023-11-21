@@ -39,7 +39,7 @@ Partial Class ViewAvailability
         TourDroneAvailability1.BackColor = Color.Transparent
         TourDroneAvailability1.Location = New Point(-6, 71)
         TourDroneAvailability1.Name = "TourDroneAvailability1"
-        TourDroneAvailability1.position = 1
+        TourDroneAvailability1.position = 0
         TourDroneAvailability1.Size = New Size(734, 100)
         TourDroneAvailability1.TabIndex = 18
         ' 
@@ -48,7 +48,7 @@ Partial Class ViewAvailability
         TourDroneAvailability2.BackColor = Color.Transparent
         TourDroneAvailability2.Location = New Point(-6, 177)
         TourDroneAvailability2.Name = "TourDroneAvailability2"
-        TourDroneAvailability2.position = 2
+        TourDroneAvailability2.position = 1
         TourDroneAvailability2.Size = New Size(734, 100)
         TourDroneAvailability2.TabIndex = 19
         ' 
@@ -57,7 +57,7 @@ Partial Class ViewAvailability
         TourDroneAvailability3.BackColor = Color.Transparent
         TourDroneAvailability3.Location = New Point(-6, 283)
         TourDroneAvailability3.Name = "TourDroneAvailability3"
-        TourDroneAvailability3.position = 3
+        TourDroneAvailability3.position = 2
         TourDroneAvailability3.Size = New Size(734, 100)
         TourDroneAvailability3.TabIndex = 20
         ' 
@@ -66,7 +66,7 @@ Partial Class ViewAvailability
         TourDroneAvailability4.BackColor = Color.Transparent
         TourDroneAvailability4.Location = New Point(-6, 389)
         TourDroneAvailability4.Name = "TourDroneAvailability4"
-        TourDroneAvailability4.position = 4
+        TourDroneAvailability4.position = 3
         TourDroneAvailability4.Size = New Size(734, 100)
         TourDroneAvailability4.TabIndex = 21
         ' 

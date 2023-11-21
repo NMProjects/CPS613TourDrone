@@ -7,6 +7,9 @@
     <Compile Update="BookingComplete.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ChooseObserveArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChooseRegisterOrQueue.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -22,6 +25,9 @@
     <Compile Update="GoHomeDialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LeftQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ObserveTourDrone.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -34,7 +40,13 @@
     <Compile Update="Registration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RegistrationCancelled.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="StaffScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TakeControlDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TourDroneAvailability.vb">

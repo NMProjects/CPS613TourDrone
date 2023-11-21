@@ -1,17 +1,23 @@
 ﻿Public Class ViewRegistrationAndQueue
+
+    Dim isClosedProgrammatically As Boolean
+
     Private Sub ViewRegistrationAndQueue_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
         Button1.Enabled = False
+        isClosedProgrammatically = False
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Dim homeDialog As New GoHomeDialog
         If homeDialog.ShowDialog() = DialogResult.OK Then
+            isClosedProgrammatically = True
             Me.Close()
         End If
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        isClosedProgrammatically = True
         Me.Close()
         Dim ViewOrRegisterOrQueue As New ViewOrRegisterOrQueue
         ViewOrRegisterOrQueue.Show()
@@ -49,6 +55,7 @@
                         Dim registrationTime As String = Form1.listOfAllListsRegistration(i)(j)(4)
                         Dim registrationTimeAsDate As DateTime = Form1.listOfAllListsRegistration(i)(j)(5)
                         Dim timer As Timer = Form1.listOfAllListsRegistration(i)(j)(6)
+                        isClosedProgrammatically = True
 
                         Me.Close()
                         Dim viewExistingRegistration As New ViewExisitingRegistration(email, phone, TourDroneName, POI, registrationTime, registrationTimeAsDate, timer)
@@ -64,8 +71,16 @@
             For i = 0 To Form1.listofAllListsQueue.Count - 1
                 For j = 0 To Form1.listofAllListsQueue(i).Count - 1
                     If email = Form1.listofAllListsQueue(i)(j)(0) Then
+                        Dim phone As String = Form1.listofAllListsQueue(i)(j)(1)
+                        Dim TourDroneName As String = Form1.listofAllListsQueue(i)(j)(2)
+                        Dim POI As String = Form1.listofAllListsQueue(i)(j)(3)
+                        Dim time As String = Form1.listofAllListsQueue(i)(j)(4)
+                        Dim timeAsDate As DateTime = Form1.listofAllListsQueue(i)(j)(5)
+                        Dim timer As Timer = Form1.listofAllListsQueue(i)(j)(6)
+                        isClosedProgrammatically = True
+
                         Me.Close()
-                        Dim viewExistingQueue As New ViewExistingQueue
+                        Dim viewExistingQueue As New ViewExistingQueue(email, phone, TourDroneName, POI, time, timeAsDate, timer)
                         viewExistingQueue.Show()
                         FoundQueue = True
                     End If
@@ -76,5 +91,11 @@
             End If
         End If
 
+    End Sub
+
+    Private Sub ViewRegistrationAndQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
+            Application.Exit()
+        End If
     End Sub
 End Class

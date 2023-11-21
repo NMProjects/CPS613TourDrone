@@ -30,6 +30,7 @@ Partial Class QueueSignUpComplete
         Label8 = New Label()
         Label6 = New Label()
         Button1 = New Button()
+        Button2 = New Button()
         SuspendLayout()
         ' 
         ' Label2
@@ -101,19 +102,30 @@ Partial Class QueueSignUpComplete
         Label6.Name = "Label6"
         Label6.Size = New Size(557, 104)
         Label6.TabIndex = 31
-        Label6.Text = "You will see a pop-up on the screen when it is your turn to take control of the drone"
+        Label6.Text = "You will see a pop-up on the screen when it is your turn to take control of the drone. In the meantime, you can observe a TourDrone being piloted by another visitor if you wish"
         Label6.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Button1
         ' 
         Button1.BackColor = Color.White
         Button1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Button1.Location = New Point(304, 466)
+        Button1.Location = New Point(132, 466)
         Button1.Name = "Button1"
         Button1.Size = New Size(110, 52)
         Button1.TabIndex = 32
         Button1.Text = "Home"
         Button1.UseVisualStyleBackColor = False
+        ' 
+        ' Button2
+        ' 
+        Button2.BackColor = Color.White
+        Button2.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Button2.Location = New Point(248, 466)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(339, 52)
+        Button2.TabIndex = 33
+        Button2.Text = "Observe Another TourDrone"
+        Button2.UseVisualStyleBackColor = False
         ' 
         ' QueueSignUpComplete
         ' 
@@ -121,6 +133,7 @@ Partial Class QueueSignUpComplete
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         ClientSize = New Size(718, 555)
+        Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label6)
         Controls.Add(Label8)
@@ -142,4 +155,5 @@ Partial Class QueueSignUpComplete
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
