@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
+    "C:\\Users\\aaron\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {
+    "C:\\Users\\aaron\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "projectUniqueName": "C:\\Users\\aaron\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
         "projectName": "TourDronePrototype",
-        "projectPath": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
-        "packagesPath": "C:\\Users\\sania\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\obj\\",
+        "projectPath": "C:\\Users\\aaron\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aaron\\Source\\Repos\\NMProjects\\CPS613TourDrone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sania\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
