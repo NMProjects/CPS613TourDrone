@@ -74,6 +74,7 @@
 
     Private Sub ChooseObserveArea_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        isClosedProgrammatically = False
     End Sub
 
     Private Sub ChooseObserveArea_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

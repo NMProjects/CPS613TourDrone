@@ -101,27 +101,30 @@ Public Class Form1
             End If
         Next
 
-        If Form1.timeDifference <= 0 Then
-            timer.Enabled = False
-            Dim phone = Form1.listOfAllListsRegistration(index1)(index2)(1)
-            Dim TourDroneName = Form1.listOfAllListsRegistration(index1)(index2)(2)
-            Dim visits = Form1.listOfAllListsRegistration(index1)(index2)(3)
-            Dim takeControl As New TakeControlDialog(userEmail, phone, TourDroneName, visits)
-            If takeControl.ShowDialog() = DialogResult.OK Then
-                Form1.listOfAllListsRegistration(index1).RemoveAt(index2)
-                For Each openForm As Form In Application.OpenForms
-                    If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
-                        formsToClose.Add(openForm)
-                    End If
-                Next
-                For Each formToClose As Form In formsToClose
-                    formToClose.Close()
-                Next
-                Form1.Hide()
-                Dim goToPOI As New DroneToPOI(TourDroneName)
-                goToPOI.Show()
+        If foundEmail = True Then
+            If Form1.listOfAllListsRegistration(index1)(index2)(7) <= 0 Then
+                timer.Enabled = False
+                Dim phone = Form1.listOfAllListsRegistration(index1)(index2)(1)
+                Dim TourDroneName = Form1.listOfAllListsRegistration(index1)(index2)(2)
+                Dim visits = Form1.listOfAllListsRegistration(index1)(index2)(3)
+                Dim takeControl As New TakeControlDialog(userEmail, phone, TourDroneName, visits)
+                If takeControl.ShowDialog() = DialogResult.OK Then
+                    Form1.listOfAllListsRegistration(index1).RemoveAt(index2)
+                    For Each openForm As Form In Application.OpenForms
+                        If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
+                            formsToClose.Add(openForm)
+                        End If
+                    Next
+                    For Each formToClose As Form In formsToClose
+                        formToClose.Close()
+                    Next
+                    Form1.Hide()
+                    Dim goToPOI As New DroneToPOI(TourDroneName)
+                    goToPOI.Show()
+                End If
             End If
         End If
+
     End Sub
 
     Public Shared Sub Timer_Tick2(sender As Object, e As EventArgs, userEmail As String, AppointmentTimeAsDate As DateTime, timer As System.Windows.Forms.Timer)
@@ -144,25 +147,27 @@ Public Class Form1
             End If
         Next
 
-        If Form1.timeDifference2 <= 0 Then
-            timer.Enabled = False
-            Dim phone = Form1.listofAllListsQueue(index1)(index2)(1)
-            Dim TourDroneName = Form1.listofAllListsQueue(index1)(index2)(2)
-            Dim visits = Form1.listofAllListsQueue(index1)(index2)(3)
-            Dim takeControl As New TakeControlDialog(userEmail, phone, TourDroneName, visits)
-            If takeControl.ShowDialog() = DialogResult.OK Then
-                Form1.listofAllListsQueue(index1).RemoveAt(index2)
-                For Each openForm As Form In Application.OpenForms
-                    If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
-                        formsToClose2.Add(openForm)
-                    End If
-                Next
-                For Each formToClose2 As Form In formsToClose2
-                    formToClose2.Close()
-                Next
-                Form1.Hide()
-                Dim goToPOI As New DroneToPOI(TourDroneName)
-                goToPOI.Show()
+        If foundEmail = True Then
+            If Form1.listofAllListsQueue(index1)(index2)(7) <= 0 Then
+                timer.Enabled = False
+                Dim phone = Form1.listofAllListsQueue(index1)(index2)(1)
+                Dim TourDroneName = Form1.listofAllListsQueue(index1)(index2)(2)
+                Dim visits = Form1.listofAllListsQueue(index1)(index2)(3)
+                Dim takeControl As New TakeControlDialog(userEmail, phone, TourDroneName, visits)
+                If takeControl.ShowDialog() = DialogResult.OK Then
+                    Form1.listofAllListsQueue(index1).RemoveAt(index2)
+                    For Each openForm As Form In Application.OpenForms
+                        If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
+                            formsToClose2.Add(openForm)
+                        End If
+                    Next
+                    For Each formToClose2 As Form In formsToClose2
+                        formToClose2.Close()
+                    Next
+                    Form1.Hide()
+                    Dim goToPOI As New DroneToPOI(TourDroneName)
+                    goToPOI.Show()
+                End If
             End If
         End If
     End Sub

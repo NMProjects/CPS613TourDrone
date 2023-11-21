@@ -11,6 +11,7 @@ Public Class ViewExisitingRegistration
     Private Shared timer As Timer
     Dim isClosedProgrammatically As Boolean
 
+
     Public Sub New(email As String, phone As String, name As String, visits As String, time As String, timeAsDate As DateTime, t As Timer)
 
         ' This call is required by the designer.

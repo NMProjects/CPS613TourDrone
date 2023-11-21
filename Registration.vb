@@ -174,7 +174,7 @@ Public Class Registration
 
     End Sub
 
-    Private Sub Registration_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub Registration_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
             Application.Exit()
         End If

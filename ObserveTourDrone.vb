@@ -47,14 +47,11 @@ Public Class ObserveTourDrone
         timeCounter = 0
         timeCount = 0
         Timer1.Start()
-
+        isClosedProgrammatically = False
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         timeCounter = timeCounter + 1
         timeCount = timeCount + 1
-        If (timeCount = 300) Then
-            'Add form to control here
-        End If
         If (timeCounter = 5) Then
             If (picCounter > array.Length - 1) Then
                 picCounter = 0

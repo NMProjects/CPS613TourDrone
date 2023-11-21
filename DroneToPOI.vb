@@ -27,7 +27,10 @@ Public Class DroneToPOI
             ProgressBar1.Value += 2
             If (ProgressBar1.Value = 100) Then
                 Timer1.Stop()
-                'add form to control here
+                MsgBox("You can now take control of the drone.")
+                Me.Close()
+                Dim TourDroneControl As New TourDroneControl(Drone)
+                TourDroneControl.Show()
             End If
             If (picCounter > 17) Then
                 picCounter = 0
@@ -56,7 +59,4 @@ Public Class DroneToPOI
 
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
 End Class
