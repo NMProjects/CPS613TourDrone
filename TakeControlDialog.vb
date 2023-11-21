@@ -21,8 +21,6 @@ Public Class TakeControlDialog
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
-        Dim TourDroneControl As New TourDroneControl
-        TourDroneControl.Show()
         Me.Close()
     End Sub
 

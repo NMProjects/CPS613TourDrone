@@ -118,6 +118,8 @@ Public Class Form1
                     formToClose.Close()
                 Next
                 Form1.Hide()
+                Dim goToPOI As New DroneToPOI(TourDroneName)
+                goToPOI.Show()
             End If
         End If
     End Sub
@@ -159,6 +161,8 @@ Public Class Form1
                     formToClose2.Close()
                 Next
                 Form1.Hide()
+                Dim goToPOI As New DroneToPOI(TourDroneName)
+                goToPOI.Show()
             End If
         End If
     End Sub

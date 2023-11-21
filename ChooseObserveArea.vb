@@ -50,10 +50,25 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim position = 0
+        Dim foundEmail As Boolean = False
+        For i = 0 To Form1.listofAllListsQueue.Count - 1
+            For j = 0 To Form1.listofAllListsQueue(i).Count - 1
+                If userEmail = Form1.listofAllListsQueue(i)(j)(0) Then
+                    foundEmail = True
+                    position = j
+                    Exit For
+                End If
+            Next
+            If foundEmail = True Then
+                Exit For
+            End If
+        Next
+
         isClosedProgrammatically = True
         Me.Close()
 
-        Dim observe As New ObserveTourDrone
+        Dim observe As New ObserveTourDrone(TourDroneName, position)
         observe.Show()
     End Sub
 
