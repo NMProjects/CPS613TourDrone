@@ -22,31 +22,48 @@ Partial Class TourDroneControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Panel1 = New Panel()
         DroneImage = New PictureBox()
         Panel2 = New Panel()
-        DroneDown = New Button()
-        DroneLeft = New Button()
-        DroneRight = New Button()
-        DroneUp = New Button()
+        DroneLeft = New PictureBox()
+        DroneDown = New PictureBox()
+        DroneRight = New PictureBox()
+        DroneUp = New PictureBox()
         Label1 = New Label()
         Panel3 = New Panel()
-        CameraOut = New Button()
-        CameraIn = New Button()
-        CameraDown = New Button()
-        CameraLeft = New Button()
-        CameraRight = New Button()
-        CameraUp = New Button()
+        PictureBox2 = New PictureBox()
+        CameraLeft = New PictureBox()
+        CameraDown = New PictureBox()
+        CameraRight = New PictureBox()
+        CameraUp = New PictureBox()
+        CameraOut = New PictureBox()
+        CameraIn = New PictureBox()
         Label2 = New Label()
         PictureBox1 = New PictureBox()
         Panel4 = New Panel()
+        TimeLabel = New Label()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        CountdownTimer = New Timer(components)
+        PictureLabel = New Label()
+        ExitButton = New Button()
+        NotifyIcon1 = New NotifyIcon(components)
         Panel1.SuspendLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
+        CType(DroneLeft, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DroneDown, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DroneRight, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DroneUp, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraLeft, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraDown, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraRight, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraUp, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraOut, ComponentModel.ISupportInitialize).BeginInit()
+        CType(CameraIn, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
         StatusStrip1.SuspendLayout()
@@ -73,9 +90,9 @@ Partial Class TourDroneControl
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = SystemColors.ControlLightLight
-        Panel2.Controls.Add(DroneDown)
+        Panel2.BackColor = SystemColors.ControlLight
         Panel2.Controls.Add(DroneLeft)
+        Panel2.Controls.Add(DroneDown)
         Panel2.Controls.Add(DroneRight)
         Panel2.Controls.Add(DroneUp)
         Panel2.Controls.Add(Label1)
@@ -84,41 +101,45 @@ Partial Class TourDroneControl
         Panel2.Size = New Size(389, 241)
         Panel2.TabIndex = 1
         ' 
-        ' DroneDown
-        ' 
-        DroneDown.Location = New Point(126, 184)
-        DroneDown.Name = "DroneDown"
-        DroneDown.Size = New Size(137, 36)
-        DroneDown.TabIndex = 4
-        DroneDown.Text = "Button4"
-        DroneDown.UseVisualStyleBackColor = True
-        ' 
         ' DroneLeft
         ' 
-        DroneLeft.Location = New Point(81, 73)
+        DroneLeft.Image = My.Resources.Resources.left_arrow
+        DroneLeft.Location = New Point(73, 100)
         DroneLeft.Name = "DroneLeft"
-        DroneLeft.Size = New Size(39, 138)
-        DroneLeft.TabIndex = 3
-        DroneLeft.Text = "Button3"
-        DroneLeft.UseVisualStyleBackColor = True
+        DroneLeft.Size = New Size(72, 72)
+        DroneLeft.SizeMode = PictureBoxSizeMode.StretchImage
+        DroneLeft.TabIndex = 15
+        DroneLeft.TabStop = False
+        ' 
+        ' DroneDown
+        ' 
+        DroneDown.Image = My.Resources.Resources.down_arrow
+        DroneDown.Location = New Point(151, 153)
+        DroneDown.Name = "DroneDown"
+        DroneDown.Size = New Size(72, 72)
+        DroneDown.SizeMode = PictureBoxSizeMode.StretchImage
+        DroneDown.TabIndex = 14
+        DroneDown.TabStop = False
         ' 
         ' DroneRight
         ' 
-        DroneRight.Location = New Point(270, 73)
+        DroneRight.Image = My.Resources.Resources.right_arrow
+        DroneRight.Location = New Point(229, 100)
         DroneRight.Name = "DroneRight"
-        DroneRight.Size = New Size(39, 138)
-        DroneRight.TabIndex = 2
-        DroneRight.Text = "Button2"
-        DroneRight.UseVisualStyleBackColor = True
+        DroneRight.Size = New Size(72, 72)
+        DroneRight.SizeMode = PictureBoxSizeMode.StretchImage
+        DroneRight.TabIndex = 13
+        DroneRight.TabStop = False
         ' 
         ' DroneUp
         ' 
-        DroneUp.Location = New Point(126, 63)
+        DroneUp.Image = My.Resources.Resources.up_arrow
+        DroneUp.Location = New Point(151, 49)
         DroneUp.Name = "DroneUp"
-        DroneUp.Size = New Size(138, 39)
-        DroneUp.TabIndex = 1
-        DroneUp.Text = "Button1"
-        DroneUp.UseVisualStyleBackColor = True
+        DroneUp.Size = New Size(72, 72)
+        DroneUp.SizeMode = PictureBoxSizeMode.StretchImage
+        DroneUp.TabIndex = 12
+        DroneUp.TabStop = False
         ' 
         ' Label1
         ' 
@@ -132,72 +153,89 @@ Partial Class TourDroneControl
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = SystemColors.ControlLightLight
-        Panel3.Controls.Add(CameraOut)
-        Panel3.Controls.Add(CameraIn)
-        Panel3.Controls.Add(CameraDown)
+        Panel3.BackColor = SystemColors.ControlLight
+        Panel3.Controls.Add(PictureBox2)
         Panel3.Controls.Add(CameraLeft)
+        Panel3.Controls.Add(CameraDown)
         Panel3.Controls.Add(CameraRight)
         Panel3.Controls.Add(CameraUp)
+        Panel3.Controls.Add(CameraOut)
+        Panel3.Controls.Add(CameraIn)
         Panel3.Controls.Add(Label2)
         Panel3.Location = New Point(419, 486)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(389, 241)
         Panel3.TabIndex = 2
         ' 
-        ' CameraOut
+        ' PictureBox2
         ' 
-        CameraOut.Location = New Point(20, 147)
-        CameraOut.Name = "CameraOut"
-        CameraOut.Size = New Size(54, 73)
-        CameraOut.TabIndex = 7
-        CameraOut.Text = "Button1"
-        CameraOut.UseVisualStyleBackColor = True
-        ' 
-        ' CameraIn
-        ' 
-        CameraIn.Location = New Point(20, 63)
-        CameraIn.Name = "CameraIn"
-        CameraIn.Size = New Size(54, 73)
-        CameraIn.TabIndex = 6
-        CameraIn.Text = "Button1"
-        CameraIn.UseVisualStyleBackColor = True
-        ' 
-        ' CameraDown
-        ' 
-        CameraDown.Location = New Point(125, 184)
-        CameraDown.Name = "CameraDown"
-        CameraDown.Size = New Size(138, 39)
-        CameraDown.TabIndex = 5
-        CameraDown.Text = "Button4"
-        CameraDown.UseVisualStyleBackColor = True
+        PictureBox2.Image = My.Resources.Resources.photo_camera_interface_symbol_for_button
+        PictureBox2.Location = New Point(313, 97)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(75, 75)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 12
+        PictureBox2.TabStop = False
         ' 
         ' CameraLeft
         ' 
-        CameraLeft.Location = New Point(80, 73)
+        CameraLeft.Image = My.Resources.Resources.left_arrow
+        CameraLeft.Location = New Point(79, 100)
         CameraLeft.Name = "CameraLeft"
-        CameraLeft.Size = New Size(39, 138)
-        CameraLeft.TabIndex = 4
-        CameraLeft.Text = "Button3"
-        CameraLeft.UseVisualStyleBackColor = True
+        CameraLeft.Size = New Size(72, 72)
+        CameraLeft.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraLeft.TabIndex = 11
+        CameraLeft.TabStop = False
+        ' 
+        ' CameraDown
+        ' 
+        CameraDown.Image = My.Resources.Resources.down_arrow
+        CameraDown.Location = New Point(157, 153)
+        CameraDown.Name = "CameraDown"
+        CameraDown.Size = New Size(72, 72)
+        CameraDown.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraDown.TabIndex = 10
+        CameraDown.TabStop = False
         ' 
         ' CameraRight
         ' 
-        CameraRight.Location = New Point(269, 73)
+        CameraRight.Image = My.Resources.Resources.right_arrow
+        CameraRight.Location = New Point(235, 100)
         CameraRight.Name = "CameraRight"
-        CameraRight.Size = New Size(39, 138)
-        CameraRight.TabIndex = 3
-        CameraRight.Text = "Button2"
-        CameraRight.UseVisualStyleBackColor = True
+        CameraRight.Size = New Size(72, 72)
+        CameraRight.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraRight.TabIndex = 9
+        CameraRight.TabStop = False
         ' 
         ' CameraUp
         ' 
-        CameraUp.Location = New Point(125, 63)
+        CameraUp.Image = My.Resources.Resources.up_arrow
+        CameraUp.Location = New Point(157, 49)
         CameraUp.Name = "CameraUp"
-        CameraUp.Size = New Size(138, 39)
-        CameraUp.TabIndex = 2
-        CameraUp.Text = "Button1"
-        CameraUp.UseVisualStyleBackColor = True
+        CameraUp.Size = New Size(72, 72)
+        CameraUp.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraUp.TabIndex = 8
+        CameraUp.TabStop = False
+        ' 
+        ' CameraOut
+        ' 
+        CameraOut.Image = My.Resources.Resources.zoom_in
+        CameraOut.Location = New Point(16, 153)
+        CameraOut.Name = "CameraOut"
+        CameraOut.Size = New Size(58, 58)
+        CameraOut.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraOut.TabIndex = 7
+        CameraOut.TabStop = False
+        ' 
+        ' CameraIn
+        ' 
+        CameraIn.Image = My.Resources.Resources.zoom_out
+        CameraIn.Location = New Point(16, 73)
+        CameraIn.Name = "CameraIn"
+        CameraIn.Size = New Size(58, 58)
+        CameraIn.SizeMode = PictureBoxSizeMode.StretchImage
+        CameraIn.TabIndex = 6
+        CameraIn.TabStop = False
         ' 
         ' Label2
         ' 
@@ -213,9 +251,9 @@ Partial Class TourDroneControl
         ' 
         PictureBox1.BackColor = SystemColors.ControlLightLight
         PictureBox1.Image = My.Resources.Resources.clock
-        PictureBox1.Location = New Point(3, 0)
+        PictureBox1.Location = New Point(3, 7)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(64, 65)
+        PictureBox1.Size = New Size(64, 58)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
@@ -223,33 +261,66 @@ Partial Class TourDroneControl
         ' Panel4
         ' 
         Panel4.BackColor = SystemColors.Control
+        Panel4.Controls.Add(TimeLabel)
         Panel4.Controls.Add(PictureBox1)
-        Panel4.Location = New Point(629, 5)
+        Panel4.Location = New Point(654, 5)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(179, 65)
+        Panel4.Size = New Size(154, 65)
         Panel4.TabIndex = 4
+        ' 
+        ' TimeLabel
+        ' 
+        TimeLabel.AutoSize = True
+        TimeLabel.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
+        TimeLabel.Location = New Point(70, 7)
+        TimeLabel.Name = "TimeLabel"
+        TimeLabel.Size = New Size(81, 46)
+        TimeLabel.TabIndex = 4
+        TimeLabel.Text = "2:30"
         ' 
         ' StatusStrip1
         ' 
         StatusStrip1.ImageScalingSize = New Size(20, 20)
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2})
-        StatusStrip1.Location = New Point(0, 714)
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
+        StatusStrip1.Location = New Point(0, 706)
         StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(820, 26)
+        StatusStrip1.Size = New Size(820, 34)
         StatusStrip1.TabIndex = 6
         StatusStrip1.Text = "StatusStrip1"
         ' 
         ' ToolStripStatusLabel1
         ' 
+        ToolStripStatusLabel1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        ToolStripStatusLabel1.Size = New Size(153, 20)
+        ToolStripStatusLabel1.Size = New Size(200, 28)
         ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         ' 
-        ' ToolStripStatusLabel2
+        ' PictureLabel
         ' 
-        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        ToolStripStatusLabel2.Size = New Size(153, 20)
-        ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        PictureLabel.AutoSize = True
+        PictureLabel.Font = New Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point)
+        PictureLabel.ForeColor = Color.Chartreuse
+        PictureLabel.Location = New Point(29, 13)
+        PictureLabel.Name = "PictureLabel"
+        PictureLabel.Size = New Size(294, 60)
+        PictureLabel.TabIndex = 7
+        PictureLabel.Text = "Picture Taken!"
+        ' 
+        ' ExitButton
+        ' 
+        ExitButton.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
+        ExitButton.ForeColor = Color.Red
+        ExitButton.Location = New Point(537, 5)
+        ExitButton.Name = "ExitButton"
+        ExitButton.Size = New Size(114, 65)
+        ExitButton.TabIndex = 8
+        ExitButton.Text = "End Session"
+        ExitButton.UseVisualStyleBackColor = True
+        ' 
+        ' NotifyIcon1
+        ' 
+        NotifyIcon1.Text = "NotifyIcon1"
+        NotifyIcon1.Visible = True
         ' 
         ' TourDroneControl
         ' 
@@ -257,6 +328,8 @@ Partial Class TourDroneControl
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(820, 740)
+        Controls.Add(ExitButton)
+        Controls.Add(PictureLabel)
         Controls.Add(StatusStrip1)
         Controls.Add(Panel4)
         Controls.Add(Panel3)
@@ -268,10 +341,22 @@ Partial Class TourDroneControl
         CType(DroneImage, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(DroneLeft, ComponentModel.ISupportInitialize).EndInit()
+        CType(DroneDown, ComponentModel.ISupportInitialize).EndInit()
+        CType(DroneRight, ComponentModel.ISupportInitialize).EndInit()
+        CType(DroneUp, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraLeft, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraDown, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraRight, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraUp, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraOut, ComponentModel.ISupportInitialize).EndInit()
+        CType(CameraIn, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
+        Panel4.PerformLayout()
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
         ResumeLayout(False)
@@ -283,20 +368,25 @@ Partial Class TourDroneControl
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents DroneDown As Button
-    Friend WithEvents DroneLeft As Button
-    Friend WithEvents DroneRight As Button
-    Friend WithEvents DroneUp As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents DroneImage As PictureBox
-    Friend WithEvents CameraDown As Button
-    Friend WithEvents CameraLeft As Button
-    Friend WithEvents CameraRight As Button
-    Friend WithEvents CameraUp As Button
-    Friend WithEvents CameraOut As Button
-    Friend WithEvents CameraIn As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents CameraOut As PictureBox
+    Friend WithEvents CameraIn As PictureBox
+    Friend WithEvents CameraLeft As PictureBox
+    Friend WithEvents CameraDown As PictureBox
+    Friend WithEvents CameraRight As PictureBox
+    Friend WithEvents CameraUp As PictureBox
+    Friend WithEvents DroneLeft As PictureBox
+    Friend WithEvents DroneDown As PictureBox
+    Friend WithEvents DroneRight As PictureBox
+    Friend WithEvents DroneUp As PictureBox
+    Friend WithEvents CountdownTimer As Timer
+    Friend WithEvents TimeLabel As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureLabel As Label
+    Friend WithEvents ExitButton As Button
+    Friend WithEvents NotifyIcon1 As NotifyIcon
 End Class
