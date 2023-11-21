@@ -3,6 +3,7 @@ Imports System.Reflection
 
 Public Class ObserveTourDrone
 
+    Dim Drone As String
     Dim array As Array
     Dim timeCounter As Integer
     Dim picCounter As Integer
@@ -11,17 +12,25 @@ Public Class ObserveTourDrone
 
     Dim resourcesDirectory As String = Path.Combine(parentPath, "Resources")
 
+    Public Sub New(ByVal TourDrone As String)
+        ' This call is required by the designer.
+        InitializeComponent()
+        Drone = TourDrone
+        ' Add any initialization after the InitializeComponent() call.
+    End Sub
+
+
     Private Sub ObserverForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (True) Then
+        If (Drone = "A") Then
             Dim array() As String = {"falls1.png", "falls2.png", "falls3.png", "falls4.png",
         "falls5.png", "falls6.png", "falls7.png", "falls8.png", "falls9.png",
         "falls10.png", "falls11.png", "falls12.png", "falls13.png", "falls14.png",
         "falls15.png", "falls16.png"}
-        ElseIf (True) Then
+        ElseIf (Drone = "B") Then
             Dim array() As String = {"lake1.png", "lake2.png", "lake3.png", "lake4.png",
         "lake5.png", "lake6.png", "lake7.png", "lake8.png", "lake9.png",
         "lake10.png"}
-        ElseIf (True) Then
+        ElseIf (Drone = "C") Then
             Dim array() As String = {"mountain1.png", "mountain2.png", "mountain3.png", "mountain4.png",
         "mountain5.png", "mountain6.png", "mountain7.png"}
         Else
