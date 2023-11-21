@@ -1,22 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AvailabilityDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BookingComplete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChooseObserveArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ChooseRegisterOrQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ContactInfoQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ContactInfoRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DroneToPOI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GoHomeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LeftQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ObserveTourDrone.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Queue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QueueSignUpComplete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Registration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegistrationCancelled.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="StaffScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TakeControlDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TourDroneAvailability.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="TourDroneControl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewAvailability.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewExisitingRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewExistingQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ViewOrRegisterOrQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewRegistrationAndQueue.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
