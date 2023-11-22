@@ -111,7 +111,7 @@ Public Class Form1
                 If takeControl.ShowDialog() = DialogResult.OK Then
                     Form1.listOfAllListsRegistration(index1).RemoveAt(index2)
                     For Each openForm As Form In Application.OpenForms
-                        If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
+                        If Not TypeOf openForm Is Form1 Then
                             formsToClose.Add(openForm)
                         End If
                     Next

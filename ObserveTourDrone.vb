@@ -24,6 +24,8 @@ Public Class ObserveTourDrone
 
 
     Private Sub ObserverForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
+
         If (Drone = "TourDrone A") Then
             array = New String() {"falls1.png", "falls2.png", "falls3.png", "falls4.png",
         "falls5.png", "falls6.png", "falls7.png", "falls8.png", "falls9.png",

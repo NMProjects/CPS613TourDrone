@@ -27,14 +27,28 @@ Public Class ViewExistingQueue
     End Sub
 
     Private Sub ViewExistingQueue_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim foundEmail = True
+        Dim pos = 0
         Me.CenterToScreen()
         Dim newTime = 0
         Label4.Text = "Email: " + userEmail
         Label3.Text = "Phone Number: " + phoneNumber
         Label5.Text = "Name of Drone: " + TourDroneName
         Label7.Text = "Visits: " + POI
-        Label8.Text = "Position in Queue: " + Form1.listofAllListsQueue(3).Count.ToString
 
+        For i = 0 To Form1.listofAllListsQueue.Count - 1
+            For j = 0 To Form1.listofAllListsQueue(i).Count - 1
+                If userEmail = Form1.listofAllListsQueue(i)(j)(0) Then
+                    foundEmail = True
+                    pos = j
+                    Exit For
+                End If
+            Next
+            If foundEmail = True Then
+                Exit For
+            End If
+        Next
+        Label8.Text = "Position in Queue: " + pos.ToString
         isClosedProgrammatically = False
     End Sub
 
@@ -50,6 +64,7 @@ Public Class ViewExistingQueue
         For i = 0 To Form1.listofAllListsQueue.Count - 1
             For j = 0 To Form1.listofAllListsQueue(i).Count - 1
                 If userEmail = Form1.listofAllListsQueue(i)(j)(0) Then
+                    timer.Stop()
                     Form1.listofAllListsQueue(i).RemoveAt(j)
                     isClosedProgrammatically = True
                     Me.Close()

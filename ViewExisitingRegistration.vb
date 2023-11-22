@@ -81,6 +81,7 @@ Public Class ViewExisitingRegistration
         For i = 0 To Form1.listOfAllListsRegistration.Count - 1
             For j = 0 To Form1.listOfAllListsRegistration(i).Count - 1
                 If userEmail = Form1.listOfAllListsRegistration(i)(j)(0) Then
+                    timer.Stop()
                     Form1.listOfAllListsRegistration(i).RemoveAt(j)
                     isClosedProgrammatically = True
                     Me.Close()

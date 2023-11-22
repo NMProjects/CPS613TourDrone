@@ -42,6 +42,7 @@ Public Class DroneToPOI
     End Sub
 
     Private Sub DroneToPOI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
         picCounter = 0
         Timer1.Start()
 
