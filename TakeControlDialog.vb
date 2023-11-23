@@ -31,6 +31,8 @@ Public Class TakeControlDialog
     End Sub
 
     Private Sub TakeControlDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BringToFront()
+        Me.CenterToScreen()
         Label1.Text = userEmail + ", it is now time for you to take control of " + TourDroneName + ". Click ""OK"" to continue and view your TourDrone being sent to your selected area of interest. If you do not want to pilot the TourDrone any longer, click ""Cancel""."
     End Sub
 End Class

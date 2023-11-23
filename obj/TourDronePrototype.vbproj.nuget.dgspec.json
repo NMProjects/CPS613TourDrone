@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
+    "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {
+    "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "projectUniqueName": "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
         "projectName": "TourDronePrototype",
-        "projectPath": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
+        "projectPath": "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\TourDronePrototype.vbproj",
         "packagesPath": "C:\\Users\\sania\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sania\\Source\\Repos\\NMProjects\\CPS613TourDrone\\obj\\",
+        "outputPath": "C:\\Users\\sania\\source\\repos\\NMProjects\\CPS613TourDrone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sania\\AppData\\Roaming\\NuGet\\NuGet.Config",

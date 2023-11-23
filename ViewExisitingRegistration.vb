@@ -11,6 +11,7 @@ Public Class ViewExisitingRegistration
     Private Shared timer As Timer
     Dim isClosedProgrammatically As Boolean
 
+
     Public Sub New(email As String, phone As String, name As String, visits As String, time As String, timeAsDate As DateTime, t As Timer)
 
         ' This call is required by the designer.
@@ -80,6 +81,7 @@ Public Class ViewExisitingRegistration
         For i = 0 To Form1.listOfAllListsRegistration.Count - 1
             For j = 0 To Form1.listOfAllListsRegistration(i).Count - 1
                 If userEmail = Form1.listOfAllListsRegistration(i)(j)(0) Then
+                    timer.Stop()
                     Form1.listOfAllListsRegistration(i).RemoveAt(j)
                     isClosedProgrammatically = True
                     Me.Close()

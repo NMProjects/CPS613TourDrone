@@ -4,7 +4,7 @@ Imports System.Reflection
 Public Class ObserveTourDrone
 
     Dim Drone As String
-    Dim array As String()
+    Dim array As Object()
     Dim timeCounter As Integer
     Dim picCounter As Integer
     Dim parentPath As String = IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Directory.GetCurrentDirectory)))
@@ -24,21 +24,23 @@ Public Class ObserveTourDrone
 
 
     Private Sub ObserverForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CenterToScreen()
+
         If (Drone = "TourDrone A") Then
-            array = New String() {"falls1.png", "falls2.png", "falls3.png", "falls4.png",
-        "falls5.png", "falls6.png", "falls7.png", "falls8.png", "falls9.png",
-        "falls10.png", "falls11.png", "falls12.png", "falls13.png", "falls14.png",
-        "falls15.png", "falls16.png"}
+            array = New Object() {My.Resources.falls1, My.Resources.falls2, My.Resources.falls3, My.Resources.falls4,
+        My.Resources.falls5, My.Resources.falls6, My.Resources.falls7, My.Resources.falls8, My.Resources.falls9,
+        My.Resources.falls9, My.Resources.falls11, My.Resources.falls12, My.Resources.falls13, My.Resources.falls14,
+        My.Resources.falls15, My.Resources.falls16}
         ElseIf (Drone = "TourDrone B") Then
-            array = New String() {"lake1.png", "lake2.png", "lake3.png", "lake4.png",
-        "lake5.png", "lake6.png", "lake7.png", "lake8.png", "lake9.png",
-        "lake10.png"}
+            array = New Object() {My.Resources.lake1, My.Resources.lake2, My.Resources.lake3, My.Resources.lake4,
+        My.Resources.lake5, My.Resources.lake6, My.Resources.lake7, My.Resources.lake8, My.Resources.lake9,
+        My.Resources.lake10}
         ElseIf (Drone = "TourDrone C") Then
-            array = New String() {"mountain1.png", "mountain2.png", "mountain3.png", "mountain4.png",
-        "mountain5.png", "mountain6.png", "mountain7.png"}
+            array = New Object() {My.Resources.mountain1, My.Resources.mountain2, My.Resources.mountain3, My.Resources.mountain4,
+        My.Resources.mountain5, My.Resources.mountain6, My.Resources.mountain7}
         Else
-            array = New String() {"plains1.png", "plains2.png", "plains3.png", "plains4.png",
-        "plains5.png", "plains6.png", "plains7.png", "plains8.png", "plains9.png"}
+            array = New Object() {My.Resources.plains1, My.Resources.plains2, My.Resources.plains3, My.Resources.plains4,
+        My.Resources.plains5, My.Resources.plains6, My.Resources.plains7, My.Resources.plains8, My.Resources.plains9}
         End If
         Label2.Text = "Position in Queue: " + pos.ToString
         Label1.Text = "STATUS: Spectating " + Drone
@@ -47,19 +49,16 @@ Public Class ObserveTourDrone
         timeCounter = 0
         timeCount = 0
         Timer1.Start()
-
+        isClosedProgrammatically = False
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         timeCounter = timeCounter + 1
         timeCount = timeCount + 1
-        If (timeCount = 300) Then
-            'Add form to control here
-        End If
         If (timeCounter = 5) Then
             If (picCounter > array.Length - 1) Then
                 picCounter = 0
             End If
-            PictureBox2.Image = Image.FromFile(Path.Combine(resourcesDirectory, array(picCounter)))
+            PictureBox2.Image = array(picCounter)
             timeCounter = 0
             picCounter = picCounter + 1
         End If
