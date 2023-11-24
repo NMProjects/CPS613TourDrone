@@ -22,22 +22,25 @@ Partial Class StaffScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
         EndSessionBtn = New Button()
         DataGridView1 = New DataGridView()
         Label1 = New Label()
         StabilizeDroneBtn = New Button()
-        ActiveDroneComboBox = New ComboBox()
-        Label2 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' EndSessionBtn
         ' 
-        EndSessionBtn.BackColor = SystemColors.Control
+        EndSessionBtn.BackColor = SystemColors.ControlLight
+        EndSessionBtn.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
         EndSessionBtn.ForeColor = SystemColors.ControlText
-        EndSessionBtn.Location = New Point(265, 450)
+        EndSessionBtn.Location = New Point(232, 242)
+        EndSessionBtn.Margin = New Padding(3, 2, 3, 2)
         EndSessionBtn.Name = "EndSessionBtn"
-        EndSessionBtn.Size = New Size(108, 54)
+        EndSessionBtn.Size = New Size(94, 40)
         EndSessionBtn.TabIndex = 0
         EndSessionBtn.Text = "End Session"
         EndSessionBtn.UseVisualStyleBackColor = False
@@ -51,63 +54,73 @@ Partial Class StaffScreen
         DataGridView1.AllowUserToResizeRows = False
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Control
+        DataGridViewCellStyle4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle4.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
+        DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(167, 69)
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = SystemColors.Window
+        DataGridViewCellStyle5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle5.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle5.Padding = New Padding(10)
+        DataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridView1.Location = New Point(89, 58)
+        DataGridView1.Margin = New Padding(3, 2, 3, 2)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = SystemColors.Control
+        DataGridViewCellStyle6.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridViewCellStyle6.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(467, 234)
+        DataGridView1.Size = New Size(522, 111)
         DataGridView1.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(315, 24)
+        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
+        Label1.Location = New Point(264, 18)
         Label1.Name = "Label1"
-        Label1.Size = New Size(171, 28)
+        Label1.Size = New Size(173, 25)
         Label1.TabIndex = 2
         Label1.Text = "Active Drone Data"
         ' 
         ' StabilizeDroneBtn
         ' 
-        StabilizeDroneBtn.Location = New Point(428, 450)
+        StabilizeDroneBtn.BackColor = SystemColors.ControlLight
+        StabilizeDroneBtn.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        StabilizeDroneBtn.Location = New Point(374, 242)
+        StabilizeDroneBtn.Margin = New Padding(3, 2, 3, 2)
         StabilizeDroneBtn.Name = "StabilizeDroneBtn"
-        StabilizeDroneBtn.Size = New Size(108, 54)
+        StabilizeDroneBtn.Size = New Size(94, 40)
         StabilizeDroneBtn.TabIndex = 3
         StabilizeDroneBtn.Text = "Stabilize Drone"
-        StabilizeDroneBtn.UseVisualStyleBackColor = True
-        ' 
-        ' ActiveDroneComboBox
-        ' 
-        ActiveDroneComboBox.DropDownStyle = ComboBoxStyle.DropDownList
-        ActiveDroneComboBox.FormattingEnabled = True
-        ActiveDroneComboBox.Location = New Point(320, 395)
-        ActiveDroneComboBox.Name = "ActiveDroneComboBox"
-        ActiveDroneComboBox.Size = New Size(151, 28)
-        ActiveDroneComboBox.TabIndex = 4
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(321, 351)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(159, 20)
-        Label2.TabIndex = 5
-        Label2.Text = "Select an Active Drone"
+        StabilizeDroneBtn.UseVisualStyleBackColor = False
         ' 
         ' StaffScreen
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 542)
-        Controls.Add(Label2)
-        Controls.Add(ActiveDroneComboBox)
+        ClientSize = New Size(700, 339)
         Controls.Add(StabilizeDroneBtn)
         Controls.Add(Label1)
         Controls.Add(DataGridView1)
         Controls.Add(EndSessionBtn)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "StaffScreen"
         Text = "Drone Supervision"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
@@ -119,6 +132,4 @@ Partial Class StaffScreen
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents StabilizeDroneBtn As Button
-    Friend WithEvents ActiveDroneComboBox As ComboBox
-    Friend WithEvents Label2 As Label
 End Class
