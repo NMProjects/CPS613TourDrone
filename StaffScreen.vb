@@ -3,11 +3,15 @@ Public Delegate Sub StabilizeDrone()
 Public Class StaffScreen
     Public Event EndSession As EndSession
     Public Event StabilizeDrone As StabilizeDrone
-    Private Sub StaffScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Public Sub New(location As String, destination As String, exitAttempts As Integer)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
         GetDataTable()
-        UpdateDataTable("(12,13)", "waterfall", 12)
-
+        UpdateDataTable(location, destination, exitAttempts)
 
     End Sub
 
@@ -35,14 +39,14 @@ Public Class StaffScreen
         table.Rows.Add(location, destination, exitAttempts)
     End Sub
 
-    Private Sub MainForm_DroneMoved(x As Double, y As Double)
-        Dim location As String = "(" + +x + +" ," + +y + +")"
+    Public Sub DroneMoved(x As Integer, y As Integer)
+        Dim location As String = "(" & x & " ," & y & ")"
         Dim table As DataTable = DataGridView1.DataSource
 
-        table.Rows(0)("Location") = location
+        table.Rows(0)("Destination") = location
     End Sub
 
-    Private Sub MainForm_DroneExitAttempted(exitingAttempt As Integer)
+    Public Sub DroneExitAttempted(exitingAttempt As Integer)
         Dim table As DataTable = DataGridView1.DataSource
 
         table.Rows(0)("Exiting Attempts") = exitingAttempt

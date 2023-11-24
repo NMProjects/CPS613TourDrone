@@ -2,6 +2,7 @@
 
 Public Class DroneToPOI
     Dim Drone As String
+    Dim staffM As Boolean
     Dim array() As Object = {My.Resources.grandteton1, My.Resources.grandteton2, My.Resources.grandteton3, My.Resources.grandteton4,
         My.Resources.grandteton5, My.Resources.grandteton6, My.Resources.grandteton7, My.Resources.grandteton8, My.Resources.grandteton9,
         My.Resources.grandteton10, My.Resources.grandteton11, My.Resources.grandteton12, My.Resources.grandteton13, My.Resources.grandteton14,
@@ -13,11 +14,12 @@ Public Class DroneToPOI
     Dim area As String
     Dim resourcesDirectory As String = Path.Combine(parentPath, "Resources")
 
-    Public Sub New(ByVal TourDrone As String)
+    Public Sub New(ByVal TourDrone As String, staffMode As Boolean)
 
         ' This call is required by the designer.
         InitializeComponent()
         Drone = TourDrone
+        staffM = staffMode
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -29,7 +31,7 @@ Public Class DroneToPOI
                 Timer1.Stop()
                 MsgBox("You can now take control of the drone.")
                 Me.Close()
-                Dim TourDroneControl As New TourDroneControl(Drone)
+                Dim TourDroneControl As New TourDroneControl(Drone, staffM)
                 TourDroneControl.Show()
             End If
             If (picCounter > 17) Then
