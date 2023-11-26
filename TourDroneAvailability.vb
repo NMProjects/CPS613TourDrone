@@ -12,19 +12,19 @@ Public Class TourDroneAvailability
             p = value
             If p = 0 Then
                 TourDroneName.Text = "Name: TourDrone A"
-                POI.Text = "Visits: Hidden Falls"
+                POI.Text = "Visits: Waterfall"
                 LengthOfQueue.Text = "Length of Queue: " + Form1.listofAllListsQueue(0).Count.ToString
             ElseIf p = 1 Then
                 TourDroneName.Text = "Name: TourDrone B"
-                POI.Text = "Visits: Lake Solitude"
+                POI.Text = "Visits: Lake"
                 LengthOfQueue.Text = "Length of Queue: " + Form1.listofAllListsQueue(1).Count.ToString
             ElseIf p = 2 Then
                 TourDroneName.Text = "Name: TourDrone C"
-                POI.Text = "Visits: Cascade Canyon"
+                POI.Text = "Visits: Mountains"
                 LengthOfQueue.Text = "Length of Queue: " + Form1.listofAllListsQueue(2).Count.ToString
             ElseIf p = 3 Then
                 TourDroneName.Text = "Name: TourDrone D"
-                POI.Text = "Visits: Mount Owen"
+                POI.Text = "Visits: Plains"
                 LengthOfQueue.Text = "Length of Queue: " + Form1.listofAllListsQueue(3).Count.ToString
             End If
         End Set
