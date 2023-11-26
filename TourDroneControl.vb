@@ -185,6 +185,9 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 1 Then
             DroneImage.Image = img12
             imgY += 1
+        ElseIf imgX >= -1 And imgX <= 1 And imgY = 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
         RaiseEvent DroneMoved(imgX, imgY)
     End Sub
@@ -208,6 +211,9 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 2 Then
             DroneImage.Image = img11
             imgY -= 1
+        ElseIf imgX >= -1 And imgX <= 1 And imgY = 0 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
         RaiseEvent DroneMoved(imgX, imgY)
     End Sub
@@ -231,6 +237,9 @@ Public Class TourDroneControl
         ElseIf imgX = -1 And imgY = 2 Then
             DroneImage.Image = img02
             imgX += 1
+        ElseIf imgX = 1 And imgY >= 0 And imgY <= 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
         RaiseEvent DroneMoved(imgX, imgY)
     End Sub
@@ -254,6 +263,9 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 2 Then
             DroneImage.Image = img02
             imgX -= 1
+        ElseIf imgX = -1 And imgY >= 0 And imgY <= 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
         RaiseEvent DroneMoved(imgX, imgY)
     End Sub

@@ -48,7 +48,7 @@ Public Class StaffScreen
 
     Public Sub DroneExitAttempted(exitingAttempt As Integer)
         Dim table As DataTable = DataGridView1.DataSource
-
+        MessageBox.Show("Current drone has attempted to exit " & exitingAttempt & " times!")
         table.Rows(0)("Exiting Attempts") = exitingAttempt
     End Sub
 

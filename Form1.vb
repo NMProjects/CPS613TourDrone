@@ -175,11 +175,12 @@ Public Class Form1
     End Sub
 
     Private Sub StaffModeButton_Click(sender As Object, e As EventArgs) Handles StaffModeButton.Click
-        StaffModeButton.Text = "Staff Mode ON"
         If staffMode Then
             staffMode = False
+            StaffModeButton.Text = "Staff Mode OFF"
         Else
             staffMode = True
+            StaffModeButton.Text = "Staff Mode ON"
         End If
     End Sub
 End Class
