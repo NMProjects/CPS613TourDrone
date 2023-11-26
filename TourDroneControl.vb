@@ -49,7 +49,7 @@ Public Class TourDroneControl
             Panel2.Enabled = False
             Panel3.Enabled = False
             Panel4.Enabled = False
-            MessageBox.Show("Time has allowed has ended. You pictures and videos will be automatically sent to the saved contact information!")
+            MessageBox.Show("Time allowed has ended. You pictures and videos will be automatically sent to the saved contact information!")
             isClosedProgrammatically = True
             Me.Close()
             Form1.Show()
@@ -85,12 +85,39 @@ Public Class TourDroneControl
         'staff screen variables
         staffM = staffMode
         droneLocation = "None"
+        If tourDroneName.Equals("TourDrone A") Then
+            droneLocation = "Falls"
+            img_10 = My.Resources.falls_10
+            img00 = My.Resources.falls00
+            img10 = My.Resources.falls101
 
-        If tourDroneName.Equals("TourDrone C") Then
+            img_11 = My.Resources.falls_11
+            img01 = My.Resources.falls01
+            img11 = My.Resources.falls111
+
+            img_12 = My.Resources.falls_12
+            img02 = My.Resources.falls02
+            img12 = My.Resources.falls121
+
+        ElseIf tourDroneName.Equals("TourDrone B") Then
+            droneLocation = "Lake"
+            img_10 = My.Resources.lake_10
+            img00 = My.Resources.lake00
+            img10 = My.Resources.lake101
+
+            img_11 = My.Resources.lake_11
+            img01 = My.Resources.lake01
+            img11 = My.Resources.lake11
+
+            img_12 = My.Resources.lake_12
+            img02 = My.Resources.lake02
+            img12 = My.Resources.lake12
+
+        ElseIf tourDroneName.Equals("TourDrone C") Then
             droneLocation = "Mountains"
             img_10 = My.Resources.plains_10
             img00 = My.Resources.plains00
-            img10 = My.Resources.plains10
+            img10 = My.Resources.plains101
 
             img_11 = My.Resources.plains_11
             img01 = My.Resources.plains01
