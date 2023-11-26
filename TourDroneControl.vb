@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Xml
-
+Public Delegate Sub DroneMovedDelegate(x As Integer, y As Integer)
+Public Delegate Sub DroneExitAttemptedDelegate(attempts As Integer)
 Public Class TourDroneControl
 
     Dim img_10
@@ -22,6 +23,15 @@ Public Class TourDroneControl
     Dim time = New DateTime
     Dim maxTime = New DateTime
     Dim isClosedProgrammatically As Boolean
+
+    'variables for staffscreen
+    Dim StaffScreen1 As StaffScreen
+    Dim staffM As Boolean
+    Dim droneLocation As String = "None"
+    Dim exitingAttempts As Integer = 0
+
+    Public Event DroneMoved As DroneMovedDelegate
+    Public Event DroneExitAttempted As DroneExitAttemptedDelegate
 
     Private Sub TourDroneControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
@@ -62,17 +72,22 @@ Public Class TourDroneControl
     End Sub
 
 
-    Public Sub New(ByVal tourDroneName As String)
+    Public Sub New(ByVal tourDroneName As String, staffMode As Boolean)
 
         ' This call is required by the designer.
         InitializeComponent()
+
 
         ' Add any initialization after the InitializeComponent() call.
         Me.CenterToScreen()
         PictureLabel.Visible = False
         ToolStripStatusLabel1.Text = "Pictures taken: " + picAmount.ToString
-        If tourDroneName.Equals("TourDrone C") Then
+        'staff screen variables
+        staffM = staffMode
+        droneLocation = "None"
 
+        If tourDroneName.Equals("TourDrone C") Then
+            droneLocation = "Mountains"
             img_10 = My.Resources.plains_10
             img00 = My.Resources.plains00
             img10 = My.Resources.plains10
@@ -86,6 +101,7 @@ Public Class TourDroneControl
             img12 = My.Resources.plains12
 
         ElseIf tourDroneName.Equals("TourDrone D") Then
+            droneLocation = "Plains"
             img_10 = My.Resources.mountain_10
             img00 = My.Resources.mountain00
             img10 = My.Resources.mountain10
@@ -100,6 +116,16 @@ Public Class TourDroneControl
         End If
 
         DroneImage.Image = img00
+        'staff screen instance and event handlers
+        StaffScreen1 = New StaffScreen(droneLocation, "(" & imgX & "," & imgY & ")", exitingAttempts, staffM)
+        If staffM Then
+            StaffScreen1.Show()
+        End If
+
+        AddHandler DroneMoved, AddressOf DroneM
+        AddHandler DroneExitAttempted, AddressOf DroneE
+        AddHandler StaffScreen1.EndSession, AddressOf EndSession
+        AddHandler StaffScreen1.StabilizeDrone, AddressOf StabilizeDrone
     End Sub
     Private Sub CameraUp_Click(sender As Object, e As EventArgs) Handles CameraUp.Click
         Dim droneLoc = DroneImage.Location
@@ -159,7 +185,11 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 1 Then
             DroneImage.Image = img12
             imgY += 1
+        ElseIf imgX >= -1 And imgX <= 1 And imgY = 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
+        RaiseEvent DroneMoved(imgX, imgY)
     End Sub
 
     Private Sub DroneDown_Click(sender As Object, e As EventArgs) Handles DroneDown.Click
@@ -181,7 +211,11 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 2 Then
             DroneImage.Image = img11
             imgY -= 1
+        ElseIf imgX >= -1 And imgX <= 1 And imgY = 0 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
+        RaiseEvent DroneMoved(imgX, imgY)
     End Sub
 
     Private Sub DroneRight_Click(sender As Object, e As EventArgs) Handles DroneRight.Click
@@ -203,7 +237,11 @@ Public Class TourDroneControl
         ElseIf imgX = -1 And imgY = 2 Then
             DroneImage.Image = img02
             imgX += 1
+        ElseIf imgX = 1 And imgY >= 0 And imgY <= 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
+        RaiseEvent DroneMoved(imgX, imgY)
     End Sub
 
     Private Sub DroneLeft_Click(sender As Object, e As EventArgs) Handles DroneLeft.Click
@@ -225,8 +263,11 @@ Public Class TourDroneControl
         ElseIf imgX = 1 And imgY = 2 Then
             DroneImage.Image = img02
             imgX -= 1
+        ElseIf imgX = -1 And imgY >= 0 And imgY <= 2 Then
+            exitingAttempts += 1
+            RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
-
+        RaiseEvent DroneMoved(imgX, imgY)
     End Sub
 
     Private Sub CameraIn_Click(sender As Object, e As EventArgs) Handles CameraIn.Click
@@ -278,11 +319,12 @@ Public Class TourDroneControl
         Panel3.Enabled = False
         Panel4.Enabled = False
         CountdownTimer.Stop()
-        MessageBox.Show("You have ended your session. You pictures and videos will be automatically sent to the saved contact information!")
+        MessageBox.Show("You have ended your session. Your pictures and videos will be automatically sent to the saved contact information!")
         Dim homeDialog As New GoHomeDialog
         If homeDialog.ShowDialog() = DialogResult.OK Then
             isClosedProgrammatically = True
             Me.Close()
+            StaffScreen1.Close()
         End If
     End Sub
 
@@ -291,4 +333,36 @@ Public Class TourDroneControl
             Application.Exit()
         End If
     End Sub
+
+    'subs for staffscreen
+    Private Sub StabilizeDrone()
+        imgX = 0
+        imgY = 0
+        DroneImage.Image = img00
+        MessageBox.Show("A member of staff has stabilized your drone in the airspace.")
+    End Sub
+
+    Private Sub EndSession()
+        Panel1.Enabled = False
+        Panel2.Enabled = False
+        Panel3.Enabled = False
+        Panel4.Enabled = False
+        CountdownTimer.Stop()
+        MessageBox.Show("A member of staff has ended your session. Your pictures and videos will be automatically sent to the saved contact information!")
+        Dim homeDialog As New GoHomeDialog
+        If homeDialog.ShowDialog() = DialogResult.OK Then
+            isClosedProgrammatically = True
+            Me.Close()
+            StaffScreen1.Close()
+        End If
+    End Sub
+
+    Private Sub DroneM(x As Integer, y As Integer)
+        StaffScreen1.DroneMoved(x, y)
+    End Sub
+
+    Private Sub DroneE(attempts As Integer)
+        StaffScreen1.DroneExitAttempted(attempts)
+    End Sub
+
 End Class

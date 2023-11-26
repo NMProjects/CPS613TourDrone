@@ -30,6 +30,8 @@ Public Class Form1
 
     Public Shared listOfAllListsAvailability As ArrayList
 
+    Public Shared staffMode As Boolean = False
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim ViewOrRegisterOrQueue As New ViewOrRegisterOrQueue
         ViewOrRegisterOrQueue.Show()
@@ -119,7 +121,7 @@ Public Class Form1
                         formToClose.Close()
                     Next
                     Form1.Hide()
-                    Dim goToPOI As New DroneToPOI(TourDroneName)
+                    Dim goToPOI As New DroneToPOI(TourDroneName, staffMode)
                     goToPOI.Show()
                 End If
             End If
@@ -165,12 +167,20 @@ Public Class Form1
                         formToClose2.Close()
                     Next
                     Form1.Hide()
-                    Dim goToPOI As New DroneToPOI(TourDroneName)
+                    Dim goToPOI As New DroneToPOI(TourDroneName, staffMode)
                     goToPOI.Show()
                 End If
             End If
         End If
     End Sub
 
-
+    Private Sub StaffModeButton_Click(sender As Object, e As EventArgs) Handles StaffModeButton.Click
+        If staffMode Then
+            staffMode = False
+            StaffModeButton.Text = "Staff Mode OFF"
+        Else
+            staffMode = True
+            StaffModeButton.Text = "Staff Mode ON"
+        End If
+    End Sub
 End Class
