@@ -117,7 +117,7 @@ Public Class TourDroneControl
 
         DroneImage.Image = img00
         'staff screen instance and event handlers
-        StaffScreen1 = New StaffScreen(droneLocation, "(" & imgX & "," & imgY & ")", exitingAttempts)
+        StaffScreen1 = New StaffScreen(droneLocation, "(" & imgX & "," & imgY & ")", exitingAttempts, staffM)
         If staffM Then
             StaffScreen1.Show()
         End If

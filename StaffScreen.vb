@@ -3,8 +3,9 @@ Public Delegate Sub StabilizeDrone()
 Public Class StaffScreen
     Public Event EndSession As EndSession
     Public Event StabilizeDrone As StabilizeDrone
+    Dim staffM As Boolean
 
-    Public Sub New(location As String, destination As String, exitAttempts As Integer)
+    Public Sub New(location As String, destination As String, exitAttempts As Integer, staffMode As Boolean)
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -12,6 +13,7 @@ Public Class StaffScreen
         ' Add any initialization after the InitializeComponent() call.
         GetDataTable()
         UpdateDataTable(location, destination, exitAttempts)
+        staffM = staffMode
 
     End Sub
 
@@ -48,7 +50,9 @@ Public Class StaffScreen
 
     Public Sub DroneExitAttempted(exitingAttempt As Integer)
         Dim table As DataTable = DataGridView1.DataSource
-        MessageBox.Show("Current drone has attempted to exit " & exitingAttempt & " times!")
+        If staffM Then
+            MessageBox.Show("Current drone has attempted to exit " & exitingAttempt & " times!")
+        End If
         table.Rows(0)("Exiting Attempts") = exitingAttempt
     End Sub
 
