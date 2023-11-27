@@ -49,6 +49,7 @@ Partial Class TourDroneControl
         PictureLabel = New Label()
         ExitButton = New Button()
         NotifyIcon1 = New NotifyIcon(components)
+        WarningLabel = New Label()
         Panel1.SuspendLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class TourDroneControl
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.Control
+        Panel1.Controls.Add(WarningLabel)
         Panel1.Controls.Add(DroneImage)
         Panel1.Location = New Point(12, 76)
         Panel1.Name = "Panel1"
@@ -144,7 +146,7 @@ Partial Class TourDroneControl
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label1.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         Label1.Location = New Point(67, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(234, 46)
@@ -240,7 +242,7 @@ Partial Class TourDroneControl
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(73, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(255, 46)
@@ -271,7 +273,7 @@ Partial Class TourDroneControl
         ' TimeLabel
         ' 
         TimeLabel.AutoSize = True
-        TimeLabel.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        TimeLabel.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
         TimeLabel.Location = New Point(70, 7)
         TimeLabel.Name = "TimeLabel"
         TimeLabel.Size = New Size(81, 46)
@@ -290,7 +292,7 @@ Partial Class TourDroneControl
         ' 
         ' ToolStripStatusLabel1
         ' 
-        ToolStripStatusLabel1.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ToolStripStatusLabel1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(200, 28)
         ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
@@ -298,7 +300,7 @@ Partial Class TourDroneControl
         ' PictureLabel
         ' 
         PictureLabel.AutoSize = True
-        PictureLabel.Font = New Font("Segoe UI", 26.0F, FontStyle.Regular, GraphicsUnit.Point)
+        PictureLabel.Font = New Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point)
         PictureLabel.ForeColor = Color.Chartreuse
         PictureLabel.Location = New Point(29, 13)
         PictureLabel.Name = "PictureLabel"
@@ -308,7 +310,7 @@ Partial Class TourDroneControl
         ' 
         ' ExitButton
         ' 
-        ExitButton.Font = New Font("Segoe UI", 11.0F, FontStyle.Regular, GraphicsUnit.Point)
+        ExitButton.Font = New Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point)
         ExitButton.ForeColor = Color.Red
         ExitButton.Location = New Point(537, 5)
         ExitButton.Name = "ExitButton"
@@ -322,9 +324,19 @@ Partial Class TourDroneControl
         NotifyIcon1.Text = "NotifyIcon1"
         NotifyIcon1.Visible = True
         ' 
+        ' WarningLabel
+        ' 
+        WarningLabel.AutoSize = True
+        WarningLabel.Font = New Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point)
+        WarningLabel.Location = New Point(188, 30)
+        WarningLabel.Name = "WarningLabel"
+        WarningLabel.Size = New Size(437, 46)
+        WarningLabel.TabIndex = 9
+        WarningLabel.Text = "Please Return To Flight Area"
+        ' 
         ' TourDroneControl
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(820, 740)
@@ -338,6 +350,7 @@ Partial Class TourDroneControl
         Name = "TourDroneControl"
         Text = "Form1"
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
@@ -389,4 +402,5 @@ Partial Class TourDroneControl
     Friend WithEvents PictureLabel As Label
     Friend WithEvents ExitButton As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents WarningLabel As Label
 End Class

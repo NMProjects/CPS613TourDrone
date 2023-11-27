@@ -15,6 +15,7 @@ Public Class TourDroneControl
     Dim img12
     Dim picAmount = 0
     Dim picTimer = 0
+    Dim warningTimer = 0
 
 
     Dim imgX = 0
@@ -64,6 +65,11 @@ Public Class TourDroneControl
         Else
             PictureLabel.Visible = False
         End If
+        If warningTimer > 0 Then
+            warningTimer -= 1
+        Else
+            WarningLabel.Visible = False
+        End If
         TimeLabel.Text = getTime()
     End Sub
 
@@ -81,6 +87,7 @@ Public Class TourDroneControl
         ' Add any initialization after the InitializeComponent() call.
         Me.CenterToScreen()
         PictureLabel.Visible = False
+        WarningLabel.Visible = False
         ToolStripStatusLabel1.Text = "Pictures taken: " + picAmount.ToString
         'staff screen variables
         staffM = staffMode
@@ -213,6 +220,8 @@ Public Class TourDroneControl
             DroneImage.Image = img12
             imgY += 1
         ElseIf imgX >= -1 And imgX <= 1 And imgY = 2 Then
+            WarningLabel.Visible = True
+            warningTimer = 50
             exitingAttempts += 1
             RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
@@ -239,6 +248,8 @@ Public Class TourDroneControl
             DroneImage.Image = img11
             imgY -= 1
         ElseIf imgX >= -1 And imgX <= 1 And imgY = 0 Then
+            WarningLabel.Visible = True
+            warningTimer = 50
             exitingAttempts += 1
             RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
@@ -265,6 +276,8 @@ Public Class TourDroneControl
             DroneImage.Image = img02
             imgX += 1
         ElseIf imgX = 1 And imgY >= 0 And imgY <= 2 Then
+            WarningLabel.Visible = True
+            warningTimer = 50
             exitingAttempts += 1
             RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
@@ -291,6 +304,8 @@ Public Class TourDroneControl
             DroneImage.Image = img02
             imgX -= 1
         ElseIf imgX = -1 And imgY >= 0 And imgY <= 2 Then
+            WarningLabel.Visible = True
+            warningTimer = 50
             exitingAttempts += 1
             RaiseEvent DroneExitAttempted(exitingAttempts)
         End If
