@@ -74,6 +74,7 @@
 
     Private Sub ChooseObserveArea_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        Button1.Enabled = False
         isClosedProgrammatically = False
     End Sub
 
