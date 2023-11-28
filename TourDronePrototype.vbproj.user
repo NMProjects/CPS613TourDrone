@@ -28,6 +28,9 @@
     <Compile Update="GoHomeDialog.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="LearnMore.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LeftQueue.vb">
       <SubType>Form</SubType>
     </Compile>

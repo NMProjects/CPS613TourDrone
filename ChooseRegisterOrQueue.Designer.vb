@@ -25,7 +25,6 @@ Partial Class ChooseRegisterOrQueue
         Label1 = New Label()
         Button1 = New Button()
         Button2 = New Button()
-        Label2 = New Label()
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -65,17 +64,6 @@ Partial Class ChooseRegisterOrQueue
         Button2.Text = "Wait in Queue"
         Button2.UseVisualStyleBackColor = False
         ' 
-        ' Label2
-        ' 
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        Label2.Location = New Point(125, 494)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(469, 52)
-        Label2.TabIndex = 3
-        Label2.Text = "Click here to learn more about Grand Teton National Park and what you can do with the TourDrones"
-        Label2.TextAlign = ContentAlignment.MiddleCenter
-        ' 
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.Transparent
@@ -107,7 +95,6 @@ Partial Class ChooseRegisterOrQueue
         ClientSize = New Size(718, 555)
         Controls.Add(PictureBox2)
         Controls.Add(PictureBox1)
-        Controls.Add(Label2)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label1)
@@ -123,7 +110,6 @@ Partial Class ChooseRegisterOrQueue
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
 End Class

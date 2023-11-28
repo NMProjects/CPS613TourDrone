@@ -84,14 +84,14 @@ Partial Class GoHomeDialog
         ClientSize = New Size(384, 161)
         Controls.Add(Label1)
         Controls.Add(TableLayoutPanel1)
-        FormBorderStyle = FormBorderStyle.FixedDialog
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(4, 3, 4, 3)
         MaximizeBox = False
         MinimizeBox = False
         Name = "GoHomeDialog"
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterParent
-        Text = "Exit?"
+        Text = "Go Back to Welcome Screen"
         TableLayoutPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub

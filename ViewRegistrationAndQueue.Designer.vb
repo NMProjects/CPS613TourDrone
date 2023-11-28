@@ -42,7 +42,7 @@ Partial Class ViewRegistrationAndQueue
         Label2.Name = "Label2"
         Label2.Size = New Size(570, 106)
         Label2.TabIndex = 19
-        Label2.Text = "View Your Exisiting Appointment or Position in Queue"
+        Label2.Text = "View Your Exisiting Appointment or Infomation about Queue"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label3
@@ -134,7 +134,7 @@ Partial Class ViewRegistrationAndQueue
         Controls.Add(Label3)
         Controls.Add(Label2)
         Name = "ViewRegistrationAndQueue"
-        Text = "ViewRegistrationAndQueue"
+        Text = "View Exisiting Registration or Queue"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

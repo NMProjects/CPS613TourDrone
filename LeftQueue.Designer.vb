@@ -37,7 +37,7 @@ Partial Class LeftQueue
         Label2.Name = "Label2"
         Label2.Size = New Size(570, 56)
         Label2.TabIndex = 22
-        Label2.Text = "Left Queue"
+        Label2.Text = "Successfully Left Queue"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox2
@@ -83,7 +83,7 @@ Partial Class LeftQueue
         Controls.Add(PictureBox2)
         Controls.Add(Label2)
         Name = "LeftQueue"
-        Text = "LeftQueue"
+        Text = "Successfully Left Queue"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

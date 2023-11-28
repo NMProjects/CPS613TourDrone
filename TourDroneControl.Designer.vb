@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TourDroneControl
     Inherits System.Windows.Forms.Form
 
@@ -49,6 +49,7 @@ Partial Class TourDroneControl
         PictureLabel = New Label()
         ExitButton = New Button()
         NotifyIcon1 = New NotifyIcon(components)
+        WarningLabel = New Label()
         Panel1.SuspendLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class TourDroneControl
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.Control
+        Panel1.Controls.Add(WarningLabel)
         Panel1.Controls.Add(DroneImage)
         Panel1.Location = New Point(12, 76)
         Panel1.Name = "Panel1"
@@ -322,6 +324,16 @@ Partial Class TourDroneControl
         NotifyIcon1.Text = "NotifyIcon1"
         NotifyIcon1.Visible = True
         ' 
+        ' WarningLabel
+        ' 
+        WarningLabel.AutoSize = True
+        WarningLabel.Font = New Font("Segoe UI", 20.0F, FontStyle.Regular, GraphicsUnit.Point)
+        WarningLabel.Location = New Point(188, 30)
+        WarningLabel.Name = "WarningLabel"
+        WarningLabel.Size = New Size(437, 46)
+        WarningLabel.TabIndex = 9
+        WarningLabel.Text = "Please Return To Flight Area"
+        ' 
         ' TourDroneControl
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
@@ -338,6 +350,7 @@ Partial Class TourDroneControl
         Name = "TourDroneControl"
         Text = "Form1"
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         CType(DroneImage, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
@@ -389,4 +402,5 @@ Partial Class TourDroneControl
     Friend WithEvents PictureLabel As Label
     Friend WithEvents ExitButton As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents WarningLabel As Label
 End Class

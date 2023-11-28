@@ -78,6 +78,7 @@ Public Class Form1
 
         listOfTimersRegistration = New ArrayList()
         timeDifference = 0
+        timeDifference2 = 0
         formsToClose = New ArrayList()
         formsToClose2 = New ArrayList()
 
@@ -123,6 +124,16 @@ Public Class Form1
                     Form1.Hide()
                     Dim goToPOI As New DroneToPOI(TourDroneName, staffMode)
                     goToPOI.Show()
+                Else
+                    Form1.listOfAllListsRegistration(index1).RemoveAt(index2)
+                    For Each openForm As Form In Application.OpenForms
+                        If Not TypeOf openForm Is Form1 Then
+                            formsToClose.Add(openForm)
+                        End If
+                    Next
+                    For Each formToClose As Form In formsToClose
+                        formToClose.Close()
+                    Next
                 End If
             End If
         End If
@@ -169,6 +180,16 @@ Public Class Form1
                     Form1.Hide()
                     Dim goToPOI As New DroneToPOI(TourDroneName, staffMode)
                     goToPOI.Show()
+                Else
+                    Form1.listofAllListsQueue(index1).RemoveAt(index2)
+                    For Each openForm As Form In Application.OpenForms
+                        If Not TypeOf openForm Is Form1 And Not TypeOf openForm Is TourDroneControl Then
+                            formsToClose2.Add(openForm)
+                        End If
+                    Next
+                    For Each formToClose2 As Form In formsToClose2
+                        formToClose2.Close()
+                    Next
                 End If
             End If
         End If

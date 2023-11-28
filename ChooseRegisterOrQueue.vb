@@ -36,7 +36,7 @@
         End If
     End Sub
 
-    Private Sub ChooseRegisterOrQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub ChooseRegisterOrQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
             Application.Exit()
         End If

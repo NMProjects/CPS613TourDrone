@@ -31,6 +31,7 @@ Partial Class QueueSignUpComplete
         Label6 = New Label()
         Button1 = New Button()
         Button2 = New Button()
+        Label9 = New Label()
         SuspendLayout()
         ' 
         ' Label2
@@ -41,14 +42,14 @@ Partial Class QueueSignUpComplete
         Label2.Name = "Label2"
         Label2.Size = New Size(612, 46)
         Label2.TabIndex = 18
-        Label2.Text = "Your Booking is Complete"
+        Label2.Text = "You are Successfully in Queue"
         Label2.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label3
         ' 
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label3.Location = New Point(81, 134)
+        Label3.Location = New Point(81, 78)
         Label3.Name = "Label3"
         Label3.Size = New Size(557, 33)
         Label3.TabIndex = 19
@@ -58,7 +59,7 @@ Partial Class QueueSignUpComplete
         ' 
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label4.Location = New Point(81, 172)
+        Label4.Location = New Point(81, 121)
         Label4.Name = "Label4"
         Label4.Size = New Size(557, 33)
         Label4.TabIndex = 20
@@ -68,7 +69,7 @@ Partial Class QueueSignUpComplete
         ' 
         Label5.BackColor = Color.Transparent
         Label5.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label5.Location = New Point(81, 210)
+        Label5.Location = New Point(81, 164)
         Label5.Name = "Label5"
         Label5.Size = New Size(557, 33)
         Label5.TabIndex = 21
@@ -78,7 +79,7 @@ Partial Class QueueSignUpComplete
         ' 
         Label7.BackColor = Color.Transparent
         Label7.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label7.Location = New Point(81, 248)
+        Label7.Location = New Point(81, 207)
         Label7.Name = "Label7"
         Label7.Size = New Size(557, 33)
         Label7.TabIndex = 29
@@ -88,7 +89,7 @@ Partial Class QueueSignUpComplete
         ' 
         Label8.BackColor = Color.Transparent
         Label8.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label8.Location = New Point(81, 286)
+        Label8.Location = New Point(81, 250)
         Label8.Name = "Label8"
         Label8.Size = New Size(557, 33)
         Label8.TabIndex = 30
@@ -127,12 +128,23 @@ Partial Class QueueSignUpComplete
         Button2.Text = "Observe Another TourDrone"
         Button2.UseVisualStyleBackColor = False
         ' 
+        ' Label9
+        ' 
+        Label9.BackColor = Color.Transparent
+        Label9.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
+        Label9.Location = New Point(22, 293)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(675, 33)
+        Label9.TabIndex = 34
+        Label9.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' QueueSignUpComplete
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         ClientSize = New Size(718, 555)
+        Controls.Add(Label9)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label6)
@@ -143,7 +155,7 @@ Partial Class QueueSignUpComplete
         Controls.Add(Label3)
         Controls.Add(Label2)
         Name = "QueueSignUpComplete"
-        Text = "QueueSignUpComplete"
+        Text = "Successfully in Queue"
         ResumeLayout(False)
     End Sub
 
@@ -156,4 +168,5 @@ Partial Class QueueSignUpComplete
     Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label9 As Label
 End Class

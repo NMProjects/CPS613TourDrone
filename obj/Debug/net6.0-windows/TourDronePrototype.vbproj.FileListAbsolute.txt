@@ -78,3 +78,4 @@ C:\Users\aaron\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\
 C:\Users\aaron\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.pdb
 C:\Users\aaron\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.genruntimeconfig.cache
 C:\Users\aaron\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\ref\TourDronePrototype.dll
+C:\Users\sania\Source\Repos\NMProjects\CPS613TourDrone\obj\Debug\net6.0-windows\TourDronePrototype.LearnMore.resources

@@ -83,7 +83,7 @@ Partial Class DroneToPOI
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label3.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label3.Location = New Point(540, 87)
         Label3.Name = "Label3"
         Label3.Size = New Size(37, 21)
@@ -93,7 +93,7 @@ Partial Class DroneToPOI
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point)
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(56, 87)
         Label2.Name = "Label2"
         Label2.Size = New Size(57, 21)
@@ -113,7 +113,7 @@ Partial Class DroneToPOI
         ' 
         ' DroneToPOI
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlDark
         ClientSize = New Size(718, 555)
@@ -123,7 +123,7 @@ Partial Class DroneToPOI
         Margin = New Padding(3, 2, 3, 2)
         Name = "DroneToPOI"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "TourDrone to POI"
+        Text = "Travelling to Area of Interest"
         Panel2.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)

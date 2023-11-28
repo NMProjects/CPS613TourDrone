@@ -50,8 +50,8 @@ Public Class ViewExisitingRegistration
             End If
         Next
 
-        Dim minutes As Integer = newTime / 60
-        Dim hours As Integer = minutes / 60
+        Dim hours As Integer = newTime \ 3600
+        Dim minutes As Integer = (newTime Mod 3600) \ 60
         Label9.Text = "Time Left: " + hours.ToString + " hours and " + minutes.ToString + " minutes"
         isClosedProgrammatically = False
     End Sub

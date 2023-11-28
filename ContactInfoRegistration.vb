@@ -57,24 +57,35 @@ Public Class ContactInfoRegistration
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim email As String = TextBox1.Text
+        Dim phone As String = TextBox2.Text
         Dim timeDiff = DateDiff("s", DateTime.Now, AppointmentTimeAsDate)
-        isClosedProgrammatically = True
+
+        For i = 0 To Form1.listOfAllListsRegistration.Count - 1
+            For j = 0 To Form1.listOfAllListsRegistration(i).Count - 1
+                If email = Form1.listOfAllListsRegistration(i)(j)(0) Then
+                    MsgBox("An appointment on " + Form1.listOfAllListsRegistration(i)(j)(4) + " for the " + Form1.listOfAllListsRegistration(i)(j)(3) + " area has already been booked using this email. Please cancel your previous appointment before booking a new appointment.")
+                    Exit Sub
+                End If
+            Next
+        Next
+
         If timeDiff <= 0 Then
-            MsgBox("This time for this registration time slot has already passed. Please select a new time slot.")
+            isClosedProgrammatically = True
+            MsgBox("This time for this booking time slot has already passed. Please select a new time slot.")
             Me.Close()
             Dim register As New Registration
             register.Show()
         Else
-            Dim email As String = TextBox1.Text
-            Dim phone As String = TextBox2.Text
-
+            isClosedProgrammatically = True
             Me.Close()
             Dim bookingComplete As New BookingComplete(email, phone, nameOfTourDrone, visits, time, AppointmentTimeAsDate)
             bookingComplete.Show()
         End If
+
     End Sub
 
-    Private Sub ContactInfoRegistration_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub ContactInfoRegistration_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
             Application.Exit()
         End If

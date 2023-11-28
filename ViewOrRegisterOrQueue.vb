@@ -36,9 +36,16 @@
         ViewRegistrationAndQueue.Show()
     End Sub
 
-    Private Sub ViewOrRegisterOrQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub ViewOrRegisterOrQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        isClosedProgrammatically = True
+        Me.Close()
+        Dim learn As New LearnMore
+        learn.Show()
     End Sub
 End Class

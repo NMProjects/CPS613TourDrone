@@ -129,7 +129,7 @@ Partial Class ViewAvailability
         Controls.Add(TourDroneAvailability2)
         Controls.Add(TourDroneAvailability1)
         Name = "ViewAvailability"
-        Text = "ViewAvailability"
+        Text = "View Availability"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

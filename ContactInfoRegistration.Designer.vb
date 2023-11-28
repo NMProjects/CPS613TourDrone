@@ -144,7 +144,7 @@ Partial Class ContactInfoRegistration
         Controls.Add(PictureBox1)
         Controls.Add(PictureBox2)
         Name = "ContactInfoRegistration"
-        Text = "Book an Appointment"
+        Text = "Contact Info"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

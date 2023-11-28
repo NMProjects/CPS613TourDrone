@@ -121,8 +121,9 @@ Partial Class ChooseObserveArea
         Controls.Add(Label1)
         Controls.Add(PictureBox2)
         Controls.Add(Label2)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Name = "ChooseObserveArea"
-        Text = "ChooseObserveArea"
+        Text = "Choose Observation Area"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

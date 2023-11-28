@@ -135,7 +135,7 @@ Partial Class Queue
         Controls.Add(PictureBox2)
         Controls.Add(Label2)
         Name = "Queue"
-        Text = "Queue"
+        Text = "Queue up for a TourDrone"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

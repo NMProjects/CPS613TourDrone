@@ -30,7 +30,6 @@ Public Class ViewExistingQueue
         Dim foundEmail = True
         Dim pos = 0
         Me.CenterToScreen()
-        Dim newTime = 0
         Label4.Text = "Email: " + userEmail
         Label3.Text = "Phone Number: " + phoneNumber
         Label5.Text = "Name of Drone: " + TourDroneName
@@ -49,6 +48,12 @@ Public Class ViewExistingQueue
             End If
         Next
         Label8.Text = "Position in Queue: " + pos.ToString
+
+        Dim timeDiff = DateDiff("s", DateTime.Now, timeAsDate)
+        Dim hours As Integer = timeDiff \ 3600
+        Dim minutes As Integer = (timeDiff Mod 3600) \ 60
+        Label9.Text = "Estimated Time Remaining: " + hours.ToString + " hours and " + minutes.ToString + " minutes"
+
         isClosedProgrammatically = False
     End Sub
 

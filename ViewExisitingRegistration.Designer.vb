@@ -182,7 +182,7 @@ Partial Class ViewExisitingRegistration
         Controls.Add(Label1)
         Controls.Add(Label2)
         Name = "ViewExisitingRegistration"
-        Text = "ViewExisitingRegistration"
+        Text = "View Exisiting Appointment"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

@@ -1,4 +1,5 @@
 ﻿Imports System.Globalization
+Imports System.Reflection.Emit
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 
@@ -6,6 +7,7 @@ Public Class QueueSignUpComplete
 
     Private Shared QueueTourDrone As ArrayList
     Private Shared listOfAvailableTimes As ArrayList
+    Private Shared allTakenTimes As ArrayList
     Dim isClosedProgrammatically As Boolean
 
     Dim nameOfTourDrone As String
@@ -35,11 +37,13 @@ Public Class QueueSignUpComplete
         isClosedProgrammatically = False
         listOfTourDroneNames = New String() {"TourDrone A", "TourDrone B", "TourDrone C", "TourDrone D"}
         listOfAvailableTimes = New ArrayList()
+        allTakenTimes = New ArrayList()
 
         Dim position As Integer
 
-        time = convertDateTimetoString(listAvailability())
         timeAsDate = listAvailability()
+        time = convertDateTimetoString(timeAsDate)
+
 
         timer = New System.Windows.Forms.Timer With {
            .Interval = 1000,
@@ -61,6 +65,9 @@ Public Class QueueSignUpComplete
             Form1.timeDifference2
         }
 
+        If Form1.timeDifference2 > 0 Then
+
+        End If
         If nameOfTourDrone = "TourDrone A" Then
             Form1.listofAllListsQueue(0).Add(QueueTourDrone)
             position = Form1.listofAllListsQueue(0).Count - 1
@@ -80,6 +87,11 @@ Public Class QueueSignUpComplete
         Label5.Text = "Name of Drone: " + nameOfTourDrone
         Label7.Text = "Visits: " + visits
         Label8.Text = "Position in Queue: " + position.ToString
+
+        Dim timeDiff = DateDiff("s", DateTime.Now, timeAsDate)
+        Dim hours As Integer = timeDiff \ 3600
+        Dim minutes As Integer = (timeDiff Mod 3600) \ 60
+        Label9.Text = "Estimated Time Remaining: " + hours.ToString + " hours and " + minutes.ToString + " minutes"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -88,14 +100,28 @@ Public Class QueueSignUpComplete
         Form1.Show()
     End Sub
 
-    Private Function listAvailability()
-        Dim firstReservation As New DateTime
-        Dim nextReserveTime As New DateTime
+    Private Sub getAvailability()
+        For j = 0 To 3
+            For k = 0 To Form1.listOfAllListsRegistration(j).Count - 1
+                If Form1.listOfAllListsRegistration(j).Count <> 0 Then
+                    allTakenTimes.Add(Form1.listOfAllListsRegistration(j)(k)(4))
+                End If
+            Next
+            For k = 0 To Form1.listofAllListsQueue(j).Count - 1
+                If Form1.listofAllListsQueue(j).Count <> 0 Then
+                    allTakenTimes.Add(Form1.listofAllListsQueue(j)(k)(4))
+                End If
+            Next
+        Next
+        allTakenTimes.Sort()
+    End Sub
 
+    Private Function listAvailability()
+        getAvailability()
+        Dim firstReservation As New DateTime
         Dim additionalTime As Integer = 0
 
         For i = 1 To 1
-            Dim foundReservation = False
             Dim currentTime As DateTime = DateTime.Now
             Dim Minute As Integer = currentTime.Minute
 
@@ -103,31 +129,10 @@ Public Class QueueSignUpComplete
             firstReservation = currentTime.AddMinutes(NextReserveMinute)
             firstReservation = New Date(firstReservation.Year, firstReservation.Month, firstReservation.Day, firstReservation.Hour, firstReservation.Minute, 0)
 
-            For j = 0 To 3
-                If nameOfTourDrone = listOfTourDroneNames(j) Then
-                    For k = 0 To Form1.listOfAllListsRegistration(j).Count - 1
-                        If Form1.listOfAllListsRegistration(j).Count <> 0 Then
-                            If Form1.listOfAllListsRegistration(j)(k)(4).ToString = (convertDateTimetoString(firstReservation)) Then
-                                i = i - 1
-                                additionalTime = additionalTime + 5
-                                foundReservation = True
-                                Exit For
-                            End If
-                        End If
-                    Next
-                    For k = 0 To Form1.listofAllListsQueue(j).Count - 1
-                        If Form1.listofAllListsQueue(j).Count <> 0 Then
-                            If Form1.listofAllListsQueue(j)(k)(4).ToString = (convertDateTimetoString(firstReservation)) Then
-                                i = i - 1
-                                additionalTime = additionalTime + 5
-                                foundReservation = True
-                                Exit For
-                            End If
-                        End If
-                    Next
-                    If foundReservation = False Then
-                        nextReserveTime = firstReservation.AddMinutes(5)
-                    End If
+            For a = 0 To allTakenTimes.Count - 1
+                If allTakenTimes(a).ToString = (convertDateTimetoString(firstReservation)) Then
+                    i = i - 1
+                    additionalTime = additionalTime + 5
                     Exit For
                 End If
             Next

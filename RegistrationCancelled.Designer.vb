@@ -83,7 +83,7 @@ Partial Class RegistrationCancelled
         Controls.Add(Label4)
         Controls.Add(Label2)
         Name = "RegistrationCancelled"
-        Text = "RegistrationCancelled"
+        Text = "Appointment Cancelled"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

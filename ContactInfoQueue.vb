@@ -1,4 +1,6 @@
-﻿Public Class ContactInfoQueue
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
+
+Public Class ContactInfoQueue
 
     Dim nameOfTourDrone As String
     Dim visits As String
@@ -52,16 +54,26 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        isClosedProgrammatically = True
         Dim email As String = TextBox1.Text
         Dim phone As String = TextBox2.Text
+
+        For i = 0 To Form1.listofAllListsQueue.Count - 1
+            For j = 0 To Form1.listofAllListsQueue(i).Count - 1
+                If email = Form1.listofAllListsQueue(i)(j)(0) Then
+                    MsgBox("Someone with this email is already in queue to view the " + Form1.listofAllListsQueue(i)(j)(3) + " area.")
+                    Exit Sub
+                End If
+            Next
+        Next
+
+        isClosedProgrammatically = True
         Me.Close()
         Dim queueSignUpComplete As New QueueSignUpComplete(email, phone, nameOfTourDrone, visits)
         queueSignUpComplete.Show()
 
     End Sub
 
-    Private Sub ContactInfoQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub ContactInfoQueue_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If isClosedProgrammatically = False And isClosedProgrammatically <> Nothing Then
             Application.Exit()
         End If

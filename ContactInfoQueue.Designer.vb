@@ -144,7 +144,7 @@ Partial Class ContactInfoQueue
         Controls.Add(Label1)
         Controls.Add(Label2)
         Name = "ContactInfoQueue"
-        Text = "ContactInfoQueue"
+        Text = "Contact Info"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

@@ -75,9 +75,9 @@ Partial Class ViewExistingQueue
         ' 
         Label9.BackColor = Color.Transparent
         Label9.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point)
-        Label9.Location = New Point(81, 319)
+        Label9.Location = New Point(20, 319)
         Label9.Name = "Label9"
-        Label9.Size = New Size(557, 33)
+        Label9.Size = New Size(679, 33)
         Label9.TabIndex = 46
         Label9.TextAlign = ContentAlignment.MiddleCenter
         ' 
@@ -195,7 +195,7 @@ Partial Class ViewExistingQueue
         Controls.Add(PictureBox2)
         Controls.Add(Label2)
         Name = "ViewExistingQueue"
-        Text = "ViewExistingQueue"
+        Text = "View Existing Queue Details"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

@@ -29,6 +29,7 @@ Partial Class ViewOrRegisterOrQueue
         Label3 = New Label()
         Button3 = New Button()
         Button1 = New Button()
+        Label4 = New Label()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -57,6 +58,7 @@ Partial Class ViewOrRegisterOrQueue
         ' Label2
         ' 
         Label2.BackColor = Color.Transparent
+        Label2.BorderStyle = BorderStyle.FixedSingle
         Label2.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
         Label2.Location = New Point(125, 494)
         Label2.Name = "Label2"
@@ -109,12 +111,25 @@ Partial Class ViewOrRegisterOrQueue
         Button1.Text = "View TourDrone Availability"
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' Label4
+        ' 
+        Label4.BackColor = Color.Transparent
+        Label4.BorderStyle = BorderStyle.FixedSingle
+        Label4.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        Label4.Location = New Point(530, 3)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(188, 49)
+        Label4.TabIndex = 26
+        Label4.Text = "Click here to learn to pilot a TourDrone"
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' ViewOrRegisterOrQueue
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.JacksonLake_Transparent
         ClientSize = New Size(718, 555)
+        Controls.Add(Label4)
         Controls.Add(Label3)
         Controls.Add(PictureBox2)
         Controls.Add(Button1)
@@ -123,7 +138,7 @@ Partial Class ViewOrRegisterOrQueue
         Controls.Add(Button3)
         Controls.Add(Label1)
         Name = "ViewOrRegisterOrQueue"
-        Text = "ViewOrRegisterOrQueue"
+        Text = "Main Menu"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -135,4 +150,5 @@ Partial Class ViewOrRegisterOrQueue
     Friend WithEvents Label3 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label4 As Label
 End Class
